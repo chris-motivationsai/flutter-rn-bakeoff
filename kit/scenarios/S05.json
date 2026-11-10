@@ -1,0 +1,125 @@
+{
+ "id": "S05",
+ "title": "A failed strip read is an error, never a low result",
+ "pack": "premom",
+ "user": "u-5868",
+ "steps": [
+  {
+   "do": "scan_strip",
+   "at": "2026-11-03T14:00:00Z",
+   "type": "lh",
+   "image": "fixtures/strips/strip-008.pgm"
+  },
+  {
+   "do": "scan_strip",
+   "at": "2026-11-03T14:01:00Z",
+   "type": "lh",
+   "image": "fixtures/strips/strip-009.pgm"
+  },
+  {
+   "do": "scan_strip",
+   "at": "2026-11-03T14:02:00Z",
+   "type": "lh",
+   "image": "fixtures/strips/strip-010.pgm"
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-03T14:03:00Z",
+   "name": "after_failures"
+  },
+  {
+   "do": "scan_strip",
+   "at": "2026-11-03T14:04:00Z",
+   "type": "lh",
+   "image": "fixtures/strips/strip-011.pgm"
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-03T14:05:00Z"
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-03T14:06:00Z",
+   "name": "end"
+  }
+ ],
+ "expect": {
+  "steps": [
+   {
+    "ok": false,
+    "error": "strip_no_control_line"
+   },
+   {
+    "ok": false,
+    "error": "strip_too_dark"
+   },
+   {
+    "ok": false,
+    "error": "strip_too_bright"
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   }
+  ],
+  "snapshots": {
+   "after_failures": {
+    "pack": "premom",
+    "observations": [],
+    "pendingMutations": 0,
+    "conflicts": [],
+    "entitlements": [],
+    "purchaseState": "idle",
+    "lastPurchaseError": null,
+    "storeFinished": []
+   },
+   "end": {
+    "pack": "premom",
+    "observations": [
+     {
+      "type": "lh",
+      "observedAt": "2026-11-03T14:04:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "high",
+       "ratio": null,
+       "locked": true
+      }
+     }
+    ],
+    "pendingMutations": 0,
+    "conflicts": [],
+    "entitlements": [],
+    "purchaseState": "idle",
+    "lastPurchaseError": null,
+    "storeFinished": []
+   }
+  },
+  "server": {
+   "observations": [
+    {
+     "type": "lh",
+     "observedAt": "2026-11-03T14:04:00Z",
+     "value": {
+      "ratio": 0.616
+     },
+     "source": "strip_reader",
+     "reader": {
+      "engineVersion": "bakeoff-1.0.0"
+     }
+    }
+   ],
+   "deleted": [],
+   "events": 1
+  }
+ }
+}

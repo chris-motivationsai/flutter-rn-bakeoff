@@ -1,0 +1,34 @@
+{
+ "device": {
+  "name": "EasyHome-EBT-300",
+  "service": "1809"
+ },
+ "events": [
+  {
+   "event": "connect"
+  },
+  {
+   "event": "notify",
+   "char": "2A1E",
+   "hex": "00f40d00fe"
+  },
+  {
+   "event": "notify",
+   "char": "2A1E",
+   "hex": "000d0e00fe"
+  },
+  {
+   "event": "notify",
+   "char": "2A1E",
+   "hex": "00260e00fe"
+  },
+  {
+   "event": "notify",
+   "char": "2A1C",
+   "hex": "004e0e00fe"
+  },
+  {
+   "event": "disconnect"
+  }
+ ]
+}

@@ -1,0 +1,203 @@
+{
+ "id": "S12",
+ "title": "One pending change per observation: edits coalesce, create+delete sends nothing",
+ "pack": "premom",
+ "user": "u-5777",
+ "steps": [
+  {
+   "do": "log_manual",
+   "at": "2026-11-03T08:00:00Z",
+   "type": "flow",
+   "value": {
+    "code": "spotting"
+   }
+  },
+  {
+   "do": "edit",
+   "at": "2026-11-03T08:01:00Z",
+   "target": {
+    "type": "flow",
+    "observedAt": "2026-11-03T08:00:00Z"
+   },
+   "value": {
+    "code": "heavy"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-03T08:02:00Z",
+   "type": "mucus",
+   "value": {
+    "code": "sticky"
+   }
+  },
+  {
+   "do": "delete",
+   "at": "2026-11-03T08:03:00Z",
+   "target": {
+    "type": "mucus",
+    "observedAt": "2026-11-03T08:02:00Z"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-03T08:04:00Z",
+   "type": "bbt",
+   "value": {
+    "celsius": 36.19
+   }
+  },
+  {
+   "do": "edit",
+   "at": "2026-11-03T08:05:00Z",
+   "target": {
+    "type": "bbt",
+    "observedAt": "2026-11-03T08:04:00Z"
+   },
+   "value": {
+    "celsius": 36.14
+   }
+  },
+  {
+   "do": "edit",
+   "at": "2026-11-03T08:06:00Z",
+   "target": {
+    "type": "bbt",
+    "observedAt": "2026-11-03T08:04:00Z"
+   },
+   "value": {
+    "celsius": 36.26
+   }
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-03T08:07:00Z",
+   "name": "before_sync"
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-03T08:08:00Z"
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-03T08:09:00Z",
+   "name": "end"
+  }
+ ],
+ "expect": {
+  "steps": [
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   }
+  ],
+  "snapshots": {
+   "before_sync": {
+    "pack": "premom",
+    "observations": [
+     {
+      "type": "flow",
+      "observedAt": "2026-11-03T08:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "heavy"
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-03T08:04:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "celsius": 36.26
+      }
+     }
+    ],
+    "pendingMutations": 2,
+    "conflicts": [],
+    "entitlements": [],
+    "purchaseState": "idle",
+    "lastPurchaseError": null,
+    "storeFinished": []
+   },
+   "end": {
+    "pack": "premom",
+    "observations": [
+     {
+      "type": "flow",
+      "observedAt": "2026-11-03T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "heavy"
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-03T08:04:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.26
+      }
+     }
+    ],
+    "pendingMutations": 0,
+    "conflicts": [],
+    "entitlements": [],
+    "purchaseState": "idle",
+    "lastPurchaseError": null,
+    "storeFinished": []
+   }
+  },
+  "server": {
+   "observations": [
+    {
+     "type": "bbt",
+     "observedAt": "2026-11-03T08:04:00Z",
+     "value": {
+      "celsius": 36.26
+     },
+     "source": "manual"
+    },
+    {
+     "type": "flow",
+     "observedAt": "2026-11-03T08:00:00Z",
+     "value": {
+      "code": "heavy"
+     },
+     "source": "manual"
+    }
+   ],
+   "deleted": [],
+   "events": 3
+  }
+ }
+}

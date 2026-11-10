@@ -1,0 +1,2751 @@
+{
+ "id": "S27",
+ "title": "Persona: anovulatory, no temperature shift",
+ "pack": "polly",
+ "user": "u-6313",
+ "steps": [
+  {
+   "do": "thermometer_session",
+   "at": "2026-11-03T06:30:00Z",
+   "type": "bbt",
+   "script": "fixtures/ble/session-109.json"
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-03T08:00:00Z",
+   "type": "flow",
+   "value": {
+    "code": "medium"
+   }
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-03T22:00:00Z"
+  },
+  {
+   "do": "thermometer_session",
+   "at": "2026-11-04T06:30:00Z",
+   "type": "bbt",
+   "script": "fixtures/ble/session-110.json"
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-04T08:00:00Z",
+   "type": "flow",
+   "value": {
+    "code": "heavy"
+   }
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-04T22:00:00Z"
+  },
+  {
+   "do": "thermometer_session",
+   "at": "2026-11-05T06:30:00Z",
+   "type": "bbt",
+   "script": "fixtures/ble/session-111.json"
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-05T08:00:00Z",
+   "type": "flow",
+   "value": {
+    "code": "light"
+   }
+  },
+  {
+   "do": "edit",
+   "at": "2026-11-05T21:10:00Z",
+   "target": {
+    "type": "flow",
+    "observedAt": "2026-11-04T08:00:00Z"
+   },
+   "value": {
+    "code": "light"
+   }
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-05T22:00:00Z"
+  },
+  {
+   "do": "thermometer_session",
+   "at": "2026-11-06T06:30:00Z",
+   "type": "bbt",
+   "script": "fixtures/ble/session-112.json"
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-06T08:00:00Z",
+   "type": "flow",
+   "value": {
+    "code": "spotting"
+   }
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-06T22:00:00Z"
+  },
+  {
+   "do": "thermometer_session",
+   "at": "2026-11-07T06:30:00Z",
+   "type": "bbt",
+   "script": "fixtures/ble/session-113.json"
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-07T08:00:00Z",
+   "type": "flow",
+   "value": {
+    "code": "spotting"
+   }
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-07T22:00:00Z"
+  },
+  {
+   "do": "thermometer_session",
+   "at": "2026-11-08T06:30:00Z",
+   "type": "bbt",
+   "script": "fixtures/ble/session-114.json"
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-08T22:00:00Z"
+  },
+  {
+   "do": "thermometer_session",
+   "at": "2026-11-09T06:30:00Z",
+   "type": "bbt",
+   "script": "fixtures/ble/session-115.json"
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-09T22:00:00Z"
+  },
+  {
+   "do": "thermometer_session",
+   "at": "2026-11-10T06:30:00Z",
+   "type": "bbt",
+   "script": "fixtures/ble/session-116.json"
+  },
+  {
+   "do": "scan_strip",
+   "at": "2026-11-10T14:00:00Z",
+   "type": "lh",
+   "image": "fixtures/strips/strip-087.pgm"
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-10T22:00:00Z"
+  },
+  {
+   "do": "server_control",
+   "at": "2026-11-11T05:00:00Z",
+   "body": {
+    "mode": "http503"
+   }
+  },
+  {
+   "do": "thermometer_session",
+   "at": "2026-11-11T06:30:00Z",
+   "type": "bbt",
+   "script": "fixtures/ble/session-117.json"
+  },
+  {
+   "do": "scan_strip",
+   "at": "2026-11-11T14:00:00Z",
+   "type": "lh",
+   "image": "fixtures/strips/strip-088.pgm"
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-11T21:30:00Z",
+   "name": "day_9"
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-11T22:00:00Z"
+  },
+  {
+   "do": "thermometer_session",
+   "at": "2026-11-12T06:30:00Z",
+   "type": "bbt",
+   "script": "fixtures/ble/session-118.json"
+  },
+  {
+   "do": "scan_strip",
+   "at": "2026-11-12T14:00:00Z",
+   "type": "lh",
+   "image": "fixtures/strips/strip-089.pgm"
+  },
+  {
+   "do": "restart",
+   "at": "2026-11-12T21:00:00Z"
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-12T22:00:00Z"
+  },
+  {
+   "do": "thermometer_session",
+   "at": "2026-11-13T06:30:00Z",
+   "type": "bbt",
+   "script": "fixtures/ble/session-119.json"
+  },
+  {
+   "do": "scan_strip",
+   "at": "2026-11-13T14:00:00Z",
+   "type": "lh",
+   "image": "fixtures/strips/strip-090.pgm"
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-13T21:30:00Z",
+   "name": "day_11"
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-13T22:00:00Z"
+  },
+  {
+   "do": "server_control",
+   "at": "2026-11-14T05:00:00Z",
+   "body": {
+    "mode": "ok"
+   }
+  },
+  {
+   "do": "thermometer_session",
+   "at": "2026-11-14T06:30:00Z",
+   "type": "bbt",
+   "script": "fixtures/ble/session-120.json"
+  },
+  {
+   "do": "scan_strip",
+   "at": "2026-11-14T14:00:00Z",
+   "type": "lh",
+   "image": "fixtures/strips/strip-091.pgm"
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-14T22:00:00Z"
+  },
+  {
+   "do": "thermometer_session",
+   "at": "2026-11-15T06:30:00Z",
+   "type": "bbt",
+   "script": "fixtures/ble/session-121.json"
+  },
+  {
+   "do": "scan_strip",
+   "at": "2026-11-15T14:00:00Z",
+   "type": "lh",
+   "image": "fixtures/strips/strip-092.pgm"
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-15T22:00:00Z"
+  },
+  {
+   "do": "thermometer_session",
+   "at": "2026-11-16T06:30:00Z",
+   "type": "bbt",
+   "script": "fixtures/ble/session-122.json"
+  },
+  {
+   "do": "scan_strip",
+   "at": "2026-11-16T14:00:00Z",
+   "type": "lh",
+   "image": "fixtures/strips/strip-093.pgm"
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-16T22:00:00Z"
+  },
+  {
+   "do": "server_control",
+   "at": "2026-11-17T05:00:00Z",
+   "body": {
+    "applyThenDrop": 1
+   }
+  },
+  {
+   "do": "thermometer_session",
+   "at": "2026-11-17T06:30:00Z",
+   "type": "bbt",
+   "script": "fixtures/ble/session-123.json"
+  },
+  {
+   "do": "scan_strip",
+   "at": "2026-11-17T14:00:00Z",
+   "type": "lh",
+   "image": "fixtures/strips/strip-094.pgm"
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-17T21:30:00Z",
+   "name": "day_15"
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-17T22:00:00Z"
+  },
+  {
+   "do": "thermometer_session",
+   "at": "2026-11-18T06:30:00Z",
+   "type": "bbt",
+   "script": "fixtures/ble/session-124.json"
+  },
+  {
+   "do": "scan_strip",
+   "at": "2026-11-18T14:00:00Z",
+   "type": "lh",
+   "image": "fixtures/strips/strip-095.pgm"
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-18T21:30:00Z",
+   "name": "day_16"
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-18T22:00:00Z"
+  },
+  {
+   "do": "thermometer_session",
+   "at": "2026-11-19T06:30:00Z",
+   "type": "bbt",
+   "script": "fixtures/ble/session-125.json"
+  },
+  {
+   "do": "scan_strip",
+   "at": "2026-11-19T14:00:00Z",
+   "type": "lh",
+   "image": "fixtures/strips/strip-096.pgm"
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-19T22:00:00Z"
+  },
+  {
+   "do": "scan_strip",
+   "at": "2026-11-20T14:00:00Z",
+   "type": "lh",
+   "image": "fixtures/strips/strip-097.pgm"
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-20T22:00:00Z"
+  },
+  {
+   "do": "thermometer_session",
+   "at": "2026-11-21T06:30:00Z",
+   "type": "bbt",
+   "script": "fixtures/ble/session-126.json"
+  },
+  {
+   "do": "scan_strip",
+   "at": "2026-11-21T14:00:00Z",
+   "type": "lh",
+   "image": "fixtures/strips/strip-098.pgm"
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-21T22:00:00Z"
+  },
+  {
+   "do": "thermometer_session",
+   "at": "2026-11-22T06:30:00Z",
+   "type": "bbt",
+   "script": "fixtures/ble/session-127.json"
+  },
+  {
+   "do": "scan_strip",
+   "at": "2026-11-22T14:00:00Z",
+   "type": "lh",
+   "image": "fixtures/strips/strip-099.pgm"
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-22T22:00:00Z"
+  },
+  {
+   "do": "thermometer_session",
+   "at": "2026-11-23T06:30:00Z",
+   "type": "bbt",
+   "script": "fixtures/ble/session-128.json"
+  },
+  {
+   "do": "scan_strip",
+   "at": "2026-11-23T14:00:00Z",
+   "type": "lh",
+   "image": "fixtures/strips/strip-100.pgm"
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-23T22:00:00Z"
+  },
+  {
+   "do": "thermometer_session",
+   "at": "2026-11-24T06:30:00Z",
+   "type": "bbt",
+   "script": "fixtures/ble/session-129.json"
+  },
+  {
+   "do": "scan_strip",
+   "at": "2026-11-24T14:00:00Z",
+   "type": "lh",
+   "image": "fixtures/strips/strip-101.pgm"
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-24T22:00:00Z"
+  },
+  {
+   "do": "thermometer_session",
+   "at": "2026-11-25T06:30:00Z",
+   "type": "bbt",
+   "script": "fixtures/ble/session-130.json"
+  },
+  {
+   "do": "scan_strip",
+   "at": "2026-11-25T13:59:00Z",
+   "type": "lh",
+   "image": "fixtures/strips/strip-102.pgm"
+  },
+  {
+   "do": "scan_strip",
+   "at": "2026-11-25T14:00:00Z",
+   "type": "lh",
+   "image": "fixtures/strips/strip-103.pgm"
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-25T22:00:00Z"
+  },
+  {
+   "do": "thermometer_session",
+   "at": "2026-11-26T06:30:00Z",
+   "type": "bbt",
+   "script": "fixtures/ble/session-131.json"
+  },
+  {
+   "do": "scan_strip",
+   "at": "2026-11-26T14:00:00Z",
+   "type": "lh",
+   "image": "fixtures/strips/strip-104.pgm"
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-26T22:00:00Z"
+  },
+  {
+   "do": "thermometer_session",
+   "at": "2026-11-27T06:30:00Z",
+   "type": "bbt",
+   "script": "fixtures/ble/session-132.json"
+  },
+  {
+   "do": "scan_strip",
+   "at": "2026-11-27T14:00:00Z",
+   "type": "lh",
+   "image": "fixtures/strips/strip-105.pgm"
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-27T22:00:00Z"
+  },
+  {
+   "do": "thermometer_session",
+   "at": "2026-11-28T06:30:00Z",
+   "type": "bbt",
+   "script": "fixtures/ble/session-133.json"
+  },
+  {
+   "do": "scan_strip",
+   "at": "2026-11-28T14:00:00Z",
+   "type": "lh",
+   "image": "fixtures/strips/strip-106.pgm"
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-28T22:00:00Z"
+  },
+  {
+   "do": "thermometer_session",
+   "at": "2026-11-29T06:30:00Z",
+   "type": "bbt",
+   "script": "fixtures/ble/session-134.json"
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-29T22:00:00Z"
+  },
+  {
+   "do": "thermometer_session",
+   "at": "2026-11-30T06:30:00Z",
+   "type": "bbt",
+   "script": "fixtures/ble/session-135.json"
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-30T22:00:00Z"
+  },
+  {
+   "do": "thermometer_session",
+   "at": "2026-12-01T06:30:00Z",
+   "type": "bbt",
+   "script": "fixtures/ble/session-136.json"
+  },
+  {
+   "do": "sync",
+   "at": "2026-12-01T22:00:00Z"
+  },
+  {
+   "do": "thermometer_session",
+   "at": "2026-12-02T06:30:00Z",
+   "type": "bbt",
+   "script": "fixtures/ble/session-137.json"
+  },
+  {
+   "do": "sync",
+   "at": "2026-12-02T22:00:00Z"
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-12-03T08:00:00Z",
+   "name": "end"
+  }
+ ],
+ "expect": {
+  "steps": [
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": false,
+    "error": "thermo_no_final_reading"
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": false,
+    "error": "network"
+   },
+   {
+    "ok": false,
+    "error": "thermo_no_final_reading"
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": false,
+    "error": "network"
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": false,
+    "error": "network"
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": false,
+    "error": "network"
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": false,
+    "error": "strip_too_dark"
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   }
+  ],
+  "snapshots": {
+   "day_9": {
+    "pack": "polly",
+    "observations": [
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-03T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.33
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-03T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "medium"
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-04T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.28
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-04T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "light"
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-05T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.22
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-05T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "light"
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-06T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "spotting"
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-07T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.42
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-07T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "spotting"
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-08T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.26
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-09T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.38
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-10T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.39
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-10T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "negative",
+       "ratio": null,
+       "locked": false
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-11T06:30:00Z",
+      "source": "thermometer",
+      "sync": "pending",
+      "display": {
+       "celsius": 36.39
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-11T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "pending",
+      "display": {
+       "level": "negative",
+       "ratio": null,
+       "locked": false
+      }
+     }
+    ],
+    "pendingMutations": 2,
+    "conflicts": [],
+    "entitlements": [],
+    "purchaseState": "idle",
+    "lastPurchaseError": null,
+    "storeFinished": []
+   },
+   "day_11": {
+    "pack": "polly",
+    "observations": [
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-03T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.33
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-03T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "medium"
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-04T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.28
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-04T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "light"
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-05T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.22
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-05T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "light"
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-06T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "spotting"
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-07T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.42
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-07T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "spotting"
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-08T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.26
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-09T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.38
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-10T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.39
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-10T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "negative",
+       "ratio": null,
+       "locked": false
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-11T06:30:00Z",
+      "source": "thermometer",
+      "sync": "pending",
+      "display": {
+       "celsius": 36.39
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-11T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "pending",
+      "display": {
+       "level": "negative",
+       "ratio": null,
+       "locked": false
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-12T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "pending",
+      "display": {
+       "level": "negative",
+       "ratio": null,
+       "locked": false
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-13T06:30:00Z",
+      "source": "thermometer",
+      "sync": "pending",
+      "display": {
+       "celsius": 36.22
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-13T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "pending",
+      "display": {
+       "level": "negative",
+       "ratio": null,
+       "locked": false
+      }
+     }
+    ],
+    "pendingMutations": 5,
+    "conflicts": [],
+    "entitlements": [],
+    "purchaseState": "idle",
+    "lastPurchaseError": null,
+    "storeFinished": []
+   },
+   "day_15": {
+    "pack": "polly",
+    "observations": [
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-03T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.33
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-03T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "medium"
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-04T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.28
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-04T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "light"
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-05T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.22
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-05T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "light"
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-06T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "spotting"
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-07T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.42
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-07T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "spotting"
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-08T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.26
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-09T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.38
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-10T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.39
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-10T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "negative",
+       "ratio": null,
+       "locked": false
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-11T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.39
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-11T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "negative",
+       "ratio": null,
+       "locked": false
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-12T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "negative",
+       "ratio": null,
+       "locked": false
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-13T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.22
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-13T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "negative",
+       "ratio": null,
+       "locked": false
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-14T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.19
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-14T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "negative",
+       "ratio": null,
+       "locked": false
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-15T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.17
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-15T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "negative",
+       "ratio": null,
+       "locked": false
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-16T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.25
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-16T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "negative",
+       "ratio": null,
+       "locked": false
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-17T06:30:00Z",
+      "source": "thermometer",
+      "sync": "pending",
+      "display": {
+       "celsius": 36.22
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-17T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "pending",
+      "display": {
+       "level": "negative",
+       "ratio": null,
+       "locked": false
+      }
+     }
+    ],
+    "pendingMutations": 2,
+    "conflicts": [],
+    "entitlements": [],
+    "purchaseState": "idle",
+    "lastPurchaseError": null,
+    "storeFinished": []
+   },
+   "day_16": {
+    "pack": "polly",
+    "observations": [
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-03T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.33
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-03T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "medium"
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-04T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.28
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-04T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "light"
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-05T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.22
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-05T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "light"
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-06T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "spotting"
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-07T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.42
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-07T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "spotting"
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-08T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.26
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-09T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.38
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-10T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.39
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-10T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "negative",
+       "ratio": null,
+       "locked": false
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-11T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.39
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-11T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "negative",
+       "ratio": null,
+       "locked": false
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-12T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "negative",
+       "ratio": null,
+       "locked": false
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-13T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.22
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-13T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "negative",
+       "ratio": null,
+       "locked": false
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-14T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.19
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-14T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "negative",
+       "ratio": null,
+       "locked": false
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-15T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.17
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-15T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "negative",
+       "ratio": null,
+       "locked": false
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-16T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.25
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-16T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "negative",
+       "ratio": null,
+       "locked": false
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-17T06:30:00Z",
+      "source": "thermometer",
+      "sync": "pending",
+      "display": {
+       "celsius": 36.22
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-17T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "pending",
+      "display": {
+       "level": "negative",
+       "ratio": null,
+       "locked": false
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-18T06:30:00Z",
+      "source": "thermometer",
+      "sync": "pending",
+      "display": {
+       "celsius": 36.33
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-18T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "pending",
+      "display": {
+       "level": "negative",
+       "ratio": null,
+       "locked": false
+      }
+     }
+    ],
+    "pendingMutations": 4,
+    "conflicts": [],
+    "entitlements": [],
+    "purchaseState": "idle",
+    "lastPurchaseError": null,
+    "storeFinished": []
+   },
+   "end": {
+    "pack": "polly",
+    "observations": [
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-03T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.33
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-03T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "medium"
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-04T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.28
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-04T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "light"
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-05T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.22
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-05T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "light"
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-06T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "spotting"
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-07T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.42
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-07T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "spotting"
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-08T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.26
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-09T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.38
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-10T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.39
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-10T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "negative",
+       "ratio": null,
+       "locked": false
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-11T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.39
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-11T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "negative",
+       "ratio": null,
+       "locked": false
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-12T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "negative",
+       "ratio": null,
+       "locked": false
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-13T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.22
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-13T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "negative",
+       "ratio": null,
+       "locked": false
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-14T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.19
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-14T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "negative",
+       "ratio": null,
+       "locked": false
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-15T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.17
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-15T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "negative",
+       "ratio": null,
+       "locked": false
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-16T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.25
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-16T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "negative",
+       "ratio": null,
+       "locked": false
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-17T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.22
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-17T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "negative",
+       "ratio": null,
+       "locked": false
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-18T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.33
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-18T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "negative",
+       "ratio": null,
+       "locked": false
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-19T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.41
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-19T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "negative",
+       "ratio": null,
+       "locked": false
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-20T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "negative",
+       "ratio": null,
+       "locked": false
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-21T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.33
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-21T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "negative",
+       "ratio": null,
+       "locked": false
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-22T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.33
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-22T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "negative",
+       "ratio": null,
+       "locked": false
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-23T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.33
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-23T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "negative",
+       "ratio": null,
+       "locked": false
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-24T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.22
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-24T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "negative",
+       "ratio": null,
+       "locked": false
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-25T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.33
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-25T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "negative",
+       "ratio": null,
+       "locked": false
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-26T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.41
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-26T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "negative",
+       "ratio": null,
+       "locked": false
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-27T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.28
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-27T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "negative",
+       "ratio": null,
+       "locked": false
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-28T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.31
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-28T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "negative",
+       "ratio": null,
+       "locked": false
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-29T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.18
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-30T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.33
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-12-01T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.28
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-12-02T06:28:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.39
+      }
+     }
+    ],
+    "pendingMutations": 0,
+    "conflicts": [],
+    "entitlements": [],
+    "purchaseState": "idle",
+    "lastPurchaseError": null,
+    "storeFinished": []
+   }
+  },
+  "server": {
+   "observations": [
+    {
+     "type": "bbt",
+     "observedAt": "2026-11-03T06:30:00Z",
+     "value": {
+      "celsius": 36.33
+     },
+     "source": "thermometer",
+     "reader": {
+      "deviceModel": "EasyHome-EBT-300"
+     }
+    },
+    {
+     "type": "bbt",
+     "observedAt": "2026-11-04T06:30:00Z",
+     "value": {
+      "celsius": 36.28
+     },
+     "source": "thermometer",
+     "reader": {
+      "deviceModel": "EasyHome-EBT-300"
+     }
+    },
+    {
+     "type": "bbt",
+     "observedAt": "2026-11-05T06:30:00Z",
+     "value": {
+      "celsius": 36.22
+     },
+     "source": "thermometer",
+     "reader": {
+      "deviceModel": "EasyHome-EBT-300"
+     }
+    },
+    {
+     "type": "bbt",
+     "observedAt": "2026-11-07T06:30:00Z",
+     "value": {
+      "celsius": 36.42
+     },
+     "source": "thermometer",
+     "reader": {
+      "deviceModel": "EasyHome-EBT-100"
+     }
+    },
+    {
+     "type": "bbt",
+     "observedAt": "2026-11-08T06:30:00Z",
+     "value": {
+      "celsius": 36.26
+     },
+     "source": "thermometer",
+     "reader": {
+      "deviceModel": "Polly-Thermo-1"
+     }
+    },
+    {
+     "type": "bbt",
+     "observedAt": "2026-11-09T06:30:00Z",
+     "value": {
+      "celsius": 36.38
+     },
+     "source": "thermometer",
+     "reader": {
+      "deviceModel": "EasyHome-EBT-100"
+     }
+    },
+    {
+     "type": "bbt",
+     "observedAt": "2026-11-10T06:30:00Z",
+     "value": {
+      "celsius": 36.39
+     },
+     "source": "thermometer",
+     "reader": {
+      "deviceModel": "EasyHome-EBT-300"
+     }
+    },
+    {
+     "type": "bbt",
+     "observedAt": "2026-11-11T06:30:00Z",
+     "value": {
+      "celsius": 36.39
+     },
+     "source": "thermometer",
+     "reader": {
+      "deviceModel": "EasyHome-EBT-300"
+     }
+    },
+    {
+     "type": "bbt",
+     "observedAt": "2026-11-13T06:30:00Z",
+     "value": {
+      "celsius": 36.22
+     },
+     "source": "thermometer",
+     "reader": {
+      "deviceModel": "Polly-Thermo-1"
+     }
+    },
+    {
+     "type": "bbt",
+     "observedAt": "2026-11-14T06:30:00Z",
+     "value": {
+      "celsius": 36.19
+     },
+     "source": "thermometer",
+     "reader": {
+      "deviceModel": "EasyHome-EBT-100"
+     }
+    },
+    {
+     "type": "bbt",
+     "observedAt": "2026-11-15T06:30:00Z",
+     "value": {
+      "celsius": 36.17
+     },
+     "source": "thermometer",
+     "reader": {
+      "deviceModel": "EasyHome-EBT-100"
+     }
+    },
+    {
+     "type": "bbt",
+     "observedAt": "2026-11-16T06:30:00Z",
+     "value": {
+      "celsius": 36.25
+     },
+     "source": "thermometer",
+     "reader": {
+      "deviceModel": "EasyHome-EBT-100"
+     }
+    },
+    {
+     "type": "bbt",
+     "observedAt": "2026-11-17T06:30:00Z",
+     "value": {
+      "celsius": 36.22
+     },
+     "source": "thermometer",
+     "reader": {
+      "deviceModel": "EasyHome-EBT-100"
+     }
+    },
+    {
+     "type": "bbt",
+     "observedAt": "2026-11-18T06:30:00Z",
+     "value": {
+      "celsius": 36.33
+     },
+     "source": "thermometer",
+     "reader": {
+      "deviceModel": "EasyHome-EBT-300"
+     }
+    },
+    {
+     "type": "bbt",
+     "observedAt": "2026-11-19T06:30:00Z",
+     "value": {
+      "celsius": 36.41
+     },
+     "source": "thermometer",
+     "reader": {
+      "deviceModel": "EasyHome-EBT-300"
+     }
+    },
+    {
+     "type": "bbt",
+     "observedAt": "2026-11-21T06:30:00Z",
+     "value": {
+      "celsius": 36.33
+     },
+     "source": "thermometer",
+     "reader": {
+      "deviceModel": "EasyHome-EBT-100"
+     }
+    },
+    {
+     "type": "bbt",
+     "observedAt": "2026-11-22T06:30:00Z",
+     "value": {
+      "celsius": 36.33
+     },
+     "source": "thermometer",
+     "reader": {
+      "deviceModel": "Polly-Thermo-1"
+     }
+    },
+    {
+     "type": "bbt",
+     "observedAt": "2026-11-23T06:30:00Z",
+     "value": {
+      "celsius": 36.33
+     },
+     "source": "thermometer",
+     "reader": {
+      "deviceModel": "Polly-Thermo-1"
+     }
+    },
+    {
+     "type": "bbt",
+     "observedAt": "2026-11-24T06:30:00Z",
+     "value": {
+      "celsius": 36.22
+     },
+     "source": "thermometer",
+     "reader": {
+      "deviceModel": "Polly-Thermo-1"
+     }
+    },
+    {
+     "type": "bbt",
+     "observedAt": "2026-11-25T06:30:00Z",
+     "value": {
+      "celsius": 36.33
+     },
+     "source": "thermometer",
+     "reader": {
+      "deviceModel": "EasyHome-EBT-100"
+     }
+    },
+    {
+     "type": "bbt",
+     "observedAt": "2026-11-26T06:30:00Z",
+     "value": {
+      "celsius": 36.41
+     },
+     "source": "thermometer",
+     "reader": {
+      "deviceModel": "Polly-Thermo-1"
+     }
+    },
+    {
+     "type": "bbt",
+     "observedAt": "2026-11-27T06:30:00Z",
+     "value": {
+      "celsius": 36.28
+     },
+     "source": "thermometer",
+     "reader": {
+      "deviceModel": "EasyHome-EBT-100"
+     }
+    },
+    {
+     "type": "bbt",
+     "observedAt": "2026-11-28T06:30:00Z",
+     "value": {
+      "celsius": 36.31
+     },
+     "source": "thermometer",
+     "reader": {
+      "deviceModel": "Polly-Thermo-1"
+     }
+    },
+    {
+     "type": "bbt",
+     "observedAt": "2026-11-29T06:30:00Z",
+     "value": {
+      "celsius": 36.18
+     },
+     "source": "thermometer",
+     "reader": {
+      "deviceModel": "Polly-Thermo-1"
+     }
+    },
+    {
+     "type": "bbt",
+     "observedAt": "2026-11-30T06:30:00Z",
+     "value": {
+      "celsius": 36.33
+     },
+     "source": "thermometer",
+     "reader": {
+      "deviceModel": "EasyHome-EBT-300"
+     }
+    },
+    {
+     "type": "bbt",
+     "observedAt": "2026-12-01T06:30:00Z",
+     "value": {
+      "celsius": 36.28
+     },
+     "source": "thermometer",
+     "reader": {
+      "deviceModel": "EasyHome-EBT-100"
+     }
+    },
+    {
+     "type": "bbt",
+     "observedAt": "2026-12-02T06:28:00Z",
+     "value": {
+      "celsius": 36.39
+     },
+     "source": "thermometer",
+     "reader": {
+      "deviceModel": "EasyHome-EBT-300"
+     }
+    },
+    {
+     "type": "flow",
+     "observedAt": "2026-11-03T08:00:00Z",
+     "value": {
+      "code": "medium"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "flow",
+     "observedAt": "2026-11-04T08:00:00Z",
+     "value": {
+      "code": "light"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "flow",
+     "observedAt": "2026-11-05T08:00:00Z",
+     "value": {
+      "code": "light"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "flow",
+     "observedAt": "2026-11-06T08:00:00Z",
+     "value": {
+      "code": "spotting"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "flow",
+     "observedAt": "2026-11-07T08:00:00Z",
+     "value": {
+      "code": "spotting"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "lh",
+     "observedAt": "2026-11-10T14:00:00Z",
+     "value": {
+      "ratio": 0.168
+     },
+     "source": "strip_reader",
+     "reader": {
+      "engineVersion": "bakeoff-1.0.0"
+     }
+    },
+    {
+     "type": "lh",
+     "observedAt": "2026-11-11T14:00:00Z",
+     "value": {
+      "ratio": 0.105
+     },
+     "source": "strip_reader",
+     "reader": {
+      "engineVersion": "bakeoff-1.0.0"
+     }
+    },
+    {
+     "type": "lh",
+     "observedAt": "2026-11-12T14:00:00Z",
+     "value": {
+      "ratio": 0.391
+     },
+     "source": "strip_reader",
+     "reader": {
+      "engineVersion": "bakeoff-1.0.0"
+     }
+    },
+    {
+     "type": "lh",
+     "observedAt": "2026-11-13T14:00:00Z",
+     "value": {
+      "ratio": 0.326
+     },
+     "source": "strip_reader",
+     "reader": {
+      "engineVersion": "bakeoff-1.0.0"
+     }
+    },
+    {
+     "type": "lh",
+     "observedAt": "2026-11-14T14:00:00Z",
+     "value": {
+      "ratio": 0.321
+     },
+     "source": "strip_reader",
+     "reader": {
+      "engineVersion": "bakeoff-1.0.0"
+     }
+    },
+    {
+     "type": "lh",
+     "observedAt": "2026-11-15T14:00:00Z",
+     "value": {
+      "ratio": 0.283
+     },
+     "source": "strip_reader",
+     "reader": {
+      "engineVersion": "bakeoff-1.0.0"
+     }
+    },
+    {
+     "type": "lh",
+     "observedAt": "2026-11-16T14:00:00Z",
+     "value": {
+      "ratio": 0.317
+     },
+     "source": "strip_reader",
+     "reader": {
+      "engineVersion": "bakeoff-1.0.0"
+     }
+    },
+    {
+     "type": "lh",
+     "observedAt": "2026-11-17T14:00:00Z",
+     "value": {
+      "ratio": 0.248
+     },
+     "source": "strip_reader",
+     "reader": {
+      "engineVersion": "bakeoff-1.0.0"
+     }
+    },
+    {
+     "type": "lh",
+     "observedAt": "2026-11-18T14:00:00Z",
+     "value": {
+      "ratio": 0.145
+     },
+     "source": "strip_reader",
+     "reader": {
+      "engineVersion": "bakeoff-1.0.0"
+     }
+    },
+    {
+     "type": "lh",
+     "observedAt": "2026-11-19T14:00:00Z",
+     "value": {
+      "ratio": 0.297
+     },
+     "source": "strip_reader",
+     "reader": {
+      "engineVersion": "bakeoff-1.0.0"
+     }
+    },
+    {
+     "type": "lh",
+     "observedAt": "2026-11-20T14:00:00Z",
+     "value": {
+      "ratio": 0.365
+     },
+     "source": "strip_reader",
+     "reader": {
+      "engineVersion": "bakeoff-1.0.0"
+     }
+    },
+    {
+     "type": "lh",
+     "observedAt": "2026-11-21T14:00:00Z",
+     "value": {
+      "ratio": 0.334
+     },
+     "source": "strip_reader",
+     "reader": {
+      "engineVersion": "bakeoff-1.0.0"
+     }
+    },
+    {
+     "type": "lh",
+     "observedAt": "2026-11-22T14:00:00Z",
+     "value": {
+      "ratio": 0.227
+     },
+     "source": "strip_reader",
+     "reader": {
+      "engineVersion": "bakeoff-1.0.0"
+     }
+    },
+    {
+     "type": "lh",
+     "observedAt": "2026-11-23T14:00:00Z",
+     "value": {
+      "ratio": 0.173
+     },
+     "source": "strip_reader",
+     "reader": {
+      "engineVersion": "bakeoff-1.0.0"
+     }
+    },
+    {
+     "type": "lh",
+     "observedAt": "2026-11-24T14:00:00Z",
+     "value": {
+      "ratio": 0.28
+     },
+     "source": "strip_reader",
+     "reader": {
+      "engineVersion": "bakeoff-1.0.0"
+     }
+    },
+    {
+     "type": "lh",
+     "observedAt": "2026-11-25T14:00:00Z",
+     "value": {
+      "ratio": 0.302
+     },
+     "source": "strip_reader",
+     "reader": {
+      "engineVersion": "bakeoff-1.0.0"
+     }
+    },
+    {
+     "type": "lh",
+     "observedAt": "2026-11-26T14:00:00Z",
+     "value": {
+      "ratio": 0.278
+     },
+     "source": "strip_reader",
+     "reader": {
+      "engineVersion": "bakeoff-1.0.0"
+     }
+    },
+    {
+     "type": "lh",
+     "observedAt": "2026-11-27T14:00:00Z",
+     "value": {
+      "ratio": 0.252
+     },
+     "source": "strip_reader",
+     "reader": {
+      "engineVersion": "bakeoff-1.0.0"
+     }
+    },
+    {
+     "type": "lh",
+     "observedAt": "2026-11-28T14:00:00Z",
+     "value": {
+      "ratio": 0.201
+     },
+     "source": "strip_reader",
+     "reader": {
+      "engineVersion": "bakeoff-1.0.0"
+     }
+    }
+   ],
+   "deleted": [],
+   "events": 46
+  }
+ }
+}

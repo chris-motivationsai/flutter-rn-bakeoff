@@ -1,0 +1,29 @@
+{
+ "device": {
+  "name": "Polly-Thermo-1",
+  "service": "1809"
+ },
+ "events": [
+  {
+   "event": "connect"
+  },
+  {
+   "event": "notify",
+   "char": "2A1E",
+   "hex": "00cc0d00fe"
+  },
+  {
+   "event": "notify",
+   "char": "2A1E",
+   "hex": "00e50d00fe"
+  },
+  {
+   "event": "notify",
+   "char": "2A1C",
+   "hex": "01cc0300ff"
+  },
+  {
+   "event": "disconnect"
+  }
+ ]
+}

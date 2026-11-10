@@ -1,0 +1,213 @@
+{
+ "id": "S19",
+ "title": "Receipts the server refuses never unlock anything",
+ "pack": "premom",
+ "user": "u-1741",
+ "steps": [
+  {
+   "do": "scan_strip",
+   "at": "2026-11-03T14:00:00Z",
+   "type": "lh",
+   "image": "fixtures/strips/strip-018.pgm"
+  },
+  {
+   "do": "purchase",
+   "at": "2026-11-03T14:01:00Z",
+   "productId": "premium_monthly",
+   "store": [
+    {
+     "event": "purchased",
+     "txId": "tx-227d024a",
+     "receipt": "eyJ0eElkIjoidHgtMjI3ZDAyNGEiLCJ1c2VySWQiOiJ1LTE3NDEiLCJwcm9kdWN0SWQiOiJwcmVtaXVtX21vbnRobHkiLCJlbnRpdGxlbWVudCI6InByZW1pdW0iLCJleHBpcmVzQXQiOiIyMDk5LTAxLTAxVDAwOjAwOjAwWiJ9.2d87936c553186de829ef789946e2fa6d7a446217aff7111ff69d6f8d784138e"
+    }
+   ]
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-03T14:02:00Z",
+   "name": "after_tampered"
+  },
+  {
+   "do": "purchase",
+   "at": "2026-11-03T14:03:00Z",
+   "productId": "premium_monthly",
+   "store": [
+    {
+     "event": "purchased",
+     "txId": "tx-8db6f2b8",
+     "receipt": "eyJ0eElkIjoidHgtOGRiNmYyYjgiLCJ1c2VySWQiOiJ1LXNvbWVvbmUtZWxzZSIsInByb2R1Y3RJZCI6InByZW1pdW1fbW9udGhseSIsImVudGl0bGVtZW50IjoicHJlbWl1bSIsImV4cGlyZXNBdCI6IjIwMjYtMTItMDNUMTQ6MDM6MDBaIn0.405f3eb7aed6944fbfe42bae9ada1b4d6f4102ce04949ddf3c689ee6917bbf47"
+    }
+   ]
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-03T14:04:00Z",
+   "name": "after_mismatch"
+  },
+  {
+   "do": "server_control",
+   "at": "2026-11-03T14:05:00Z",
+   "body": {
+    "mode": "down"
+   }
+  },
+  {
+   "do": "purchase",
+   "at": "2026-11-03T14:06:00Z",
+   "productId": "premium_monthly",
+   "store": [
+    {
+     "event": "purchased",
+     "txId": "tx-93cae2a1",
+     "receipt": "eyJ0eElkIjoidHgtOTNjYWUyYTEiLCJ1c2VySWQiOiJ1LTE3NDEiLCJwcm9kdWN0SWQiOiJwcmVtaXVtX21vbnRobHkiLCJlbnRpdGxlbWVudCI6InByZW1pdW0iLCJleHBpcmVzQXQiOiIyMDk5LTAxLTAxVDAwOjAwOjAwWiJ9.4602295dd752d61a27cdf23f4fab7ddd0fd7a547a51a2201db05586a185316b0"
+    }
+   ]
+  },
+  {
+   "do": "server_control",
+   "at": "2026-11-03T14:07:00Z",
+   "body": {
+    "mode": "ok"
+   }
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-03T14:08:00Z"
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-03T14:09:00Z",
+   "name": "end"
+  }
+ ],
+ "expect": {
+  "steps": [
+   {
+    "ok": true
+   },
+   {
+    "ok": false,
+    "error": "invalid_receipt"
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": false,
+    "error": "receipt_user_mismatch"
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   }
+  ],
+  "snapshots": {
+   "after_tampered": {
+    "pack": "premom",
+    "observations": [
+     {
+      "type": "lh",
+      "observedAt": "2026-11-03T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "pending",
+      "display": {
+       "level": "peak",
+       "ratio": null,
+       "locked": true
+      }
+     }
+    ],
+    "pendingMutations": 1,
+    "conflicts": [],
+    "entitlements": [],
+    "purchaseState": "idle",
+    "lastPurchaseError": "invalid_receipt",
+    "storeFinished": [
+     "tx-227d024a"
+    ]
+   },
+   "after_mismatch": {
+    "pack": "premom",
+    "observations": [
+     {
+      "type": "lh",
+      "observedAt": "2026-11-03T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "pending",
+      "display": {
+       "level": "peak",
+       "ratio": null,
+       "locked": true
+      }
+     }
+    ],
+    "pendingMutations": 1,
+    "conflicts": [],
+    "entitlements": [],
+    "purchaseState": "idle",
+    "lastPurchaseError": "receipt_user_mismatch",
+    "storeFinished": [
+     "tx-227d024a",
+     "tx-8db6f2b8"
+    ]
+   },
+   "end": {
+    "pack": "premom",
+    "observations": [
+     {
+      "type": "lh",
+      "observedAt": "2026-11-03T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "peak",
+       "ratio": null,
+       "locked": true
+      }
+     }
+    ],
+    "pendingMutations": 0,
+    "conflicts": [],
+    "entitlements": [],
+    "purchaseState": "idle",
+    "lastPurchaseError": "invalid_receipt",
+    "storeFinished": [
+     "tx-227d024a",
+     "tx-8db6f2b8",
+     "tx-93cae2a1"
+    ]
+   }
+  },
+  "server": {
+   "observations": [
+    {
+     "type": "lh",
+     "observedAt": "2026-11-03T14:00:00Z",
+     "value": {
+      "ratio": 1.243
+     },
+     "source": "strip_reader",
+     "reader": {
+      "engineVersion": "bakeoff-1.0.0"
+     }
+    }
+   ],
+   "deleted": [],
+   "events": 1
+  }
+ }
+}

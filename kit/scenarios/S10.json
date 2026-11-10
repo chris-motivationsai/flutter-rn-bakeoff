@@ -1,0 +1,1748 @@
+{
+ "id": "S10",
+ "title": "Large offline backlog is pushed in chunks of at most 20",
+ "pack": "premom",
+ "user": "u-7907",
+ "steps": [
+  {
+   "do": "log_manual",
+   "at": "2026-11-03T08:00:00Z",
+   "type": "flow",
+   "value": {
+    "code": "spotting"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-03T20:00:00Z",
+   "type": "mucus",
+   "value": {
+    "code": "creamy"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-04T08:00:00Z",
+   "type": "flow",
+   "value": {
+    "code": "light"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-04T20:00:00Z",
+   "type": "mucus",
+   "value": {
+    "code": "sticky"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-05T08:00:00Z",
+   "type": "flow",
+   "value": {
+    "code": "medium"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-05T20:00:00Z",
+   "type": "mucus",
+   "value": {
+    "code": "watery"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-06T08:00:00Z",
+   "type": "flow",
+   "value": {
+    "code": "light"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-06T20:00:00Z",
+   "type": "mucus",
+   "value": {
+    "code": "dry"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-07T08:00:00Z",
+   "type": "flow",
+   "value": {
+    "code": "light"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-07T20:00:00Z",
+   "type": "mucus",
+   "value": {
+    "code": "watery"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-08T08:00:00Z",
+   "type": "flow",
+   "value": {
+    "code": "spotting"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-08T20:00:00Z",
+   "type": "mucus",
+   "value": {
+    "code": "creamy"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-09T08:00:00Z",
+   "type": "flow",
+   "value": {
+    "code": "spotting"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-09T20:00:00Z",
+   "type": "mucus",
+   "value": {
+    "code": "sticky"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-10T08:00:00Z",
+   "type": "flow",
+   "value": {
+    "code": "spotting"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-10T20:00:00Z",
+   "type": "mucus",
+   "value": {
+    "code": "creamy"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-11T08:00:00Z",
+   "type": "flow",
+   "value": {
+    "code": "medium"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-11T20:00:00Z",
+   "type": "mucus",
+   "value": {
+    "code": "watery"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-12T08:00:00Z",
+   "type": "flow",
+   "value": {
+    "code": "medium"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-12T20:00:00Z",
+   "type": "mucus",
+   "value": {
+    "code": "watery"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-13T08:00:00Z",
+   "type": "flow",
+   "value": {
+    "code": "light"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-13T20:00:00Z",
+   "type": "mucus",
+   "value": {
+    "code": "sticky"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-14T08:00:00Z",
+   "type": "flow",
+   "value": {
+    "code": "medium"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-14T20:00:00Z",
+   "type": "mucus",
+   "value": {
+    "code": "sticky"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-15T08:00:00Z",
+   "type": "flow",
+   "value": {
+    "code": "heavy"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-15T20:00:00Z",
+   "type": "mucus",
+   "value": {
+    "code": "creamy"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-16T08:00:00Z",
+   "type": "flow",
+   "value": {
+    "code": "light"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-16T20:00:00Z",
+   "type": "mucus",
+   "value": {
+    "code": "sticky"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-17T08:00:00Z",
+   "type": "flow",
+   "value": {
+    "code": "medium"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-17T20:00:00Z",
+   "type": "mucus",
+   "value": {
+    "code": "watery"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-18T08:00:00Z",
+   "type": "flow",
+   "value": {
+    "code": "medium"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-18T20:00:00Z",
+   "type": "mucus",
+   "value": {
+    "code": "eggwhite"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-19T08:00:00Z",
+   "type": "flow",
+   "value": {
+    "code": "light"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-19T20:00:00Z",
+   "type": "mucus",
+   "value": {
+    "code": "dry"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-20T08:00:00Z",
+   "type": "flow",
+   "value": {
+    "code": "medium"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-20T20:00:00Z",
+   "type": "mucus",
+   "value": {
+    "code": "eggwhite"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-21T08:00:00Z",
+   "type": "flow",
+   "value": {
+    "code": "medium"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-21T20:00:00Z",
+   "type": "mucus",
+   "value": {
+    "code": "eggwhite"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-22T08:00:00Z",
+   "type": "flow",
+   "value": {
+    "code": "light"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-22T20:00:00Z",
+   "type": "mucus",
+   "value": {
+    "code": "sticky"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-23T08:00:00Z",
+   "type": "flow",
+   "value": {
+    "code": "heavy"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-23T20:00:00Z",
+   "type": "mucus",
+   "value": {
+    "code": "watery"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-24T08:00:00Z",
+   "type": "flow",
+   "value": {
+    "code": "light"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-24T20:00:00Z",
+   "type": "mucus",
+   "value": {
+    "code": "eggwhite"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-25T08:00:00Z",
+   "type": "flow",
+   "value": {
+    "code": "medium"
+   }
+  },
+  {
+   "do": "server_control",
+   "at": "2026-12-03T09:00:00Z",
+   "body": {
+    "applyThenDrop": 1
+   }
+  },
+  {
+   "do": "sync",
+   "at": "2026-12-03T09:01:00Z"
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-12-03T09:02:00Z",
+   "name": "after_drop"
+  },
+  {
+   "do": "sync",
+   "at": "2026-12-03T09:03:00Z"
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-12-03T09:04:00Z",
+   "name": "end"
+  }
+ ],
+ "expect": {
+  "steps": [
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": false,
+    "error": "network"
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   }
+  ],
+  "snapshots": {
+   "after_drop": {
+    "pack": "premom",
+    "observations": [
+     {
+      "type": "flow",
+      "observedAt": "2026-11-03T08:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "spotting"
+      }
+     },
+     {
+      "type": "mucus",
+      "observedAt": "2026-11-03T20:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "creamy"
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-04T08:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "light"
+      }
+     },
+     {
+      "type": "mucus",
+      "observedAt": "2026-11-04T20:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "sticky"
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-05T08:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "medium"
+      }
+     },
+     {
+      "type": "mucus",
+      "observedAt": "2026-11-05T20:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "watery"
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-06T08:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "light"
+      }
+     },
+     {
+      "type": "mucus",
+      "observedAt": "2026-11-06T20:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "dry"
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-07T08:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "light"
+      }
+     },
+     {
+      "type": "mucus",
+      "observedAt": "2026-11-07T20:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "watery"
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-08T08:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "spotting"
+      }
+     },
+     {
+      "type": "mucus",
+      "observedAt": "2026-11-08T20:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "creamy"
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-09T08:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "spotting"
+      }
+     },
+     {
+      "type": "mucus",
+      "observedAt": "2026-11-09T20:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "sticky"
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-10T08:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "spotting"
+      }
+     },
+     {
+      "type": "mucus",
+      "observedAt": "2026-11-10T20:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "creamy"
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-11T08:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "medium"
+      }
+     },
+     {
+      "type": "mucus",
+      "observedAt": "2026-11-11T20:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "watery"
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-12T08:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "medium"
+      }
+     },
+     {
+      "type": "mucus",
+      "observedAt": "2026-11-12T20:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "watery"
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-13T08:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "light"
+      }
+     },
+     {
+      "type": "mucus",
+      "observedAt": "2026-11-13T20:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "sticky"
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-14T08:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "medium"
+      }
+     },
+     {
+      "type": "mucus",
+      "observedAt": "2026-11-14T20:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "sticky"
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-15T08:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "heavy"
+      }
+     },
+     {
+      "type": "mucus",
+      "observedAt": "2026-11-15T20:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "creamy"
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-16T08:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "light"
+      }
+     },
+     {
+      "type": "mucus",
+      "observedAt": "2026-11-16T20:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "sticky"
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-17T08:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "medium"
+      }
+     },
+     {
+      "type": "mucus",
+      "observedAt": "2026-11-17T20:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "watery"
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-18T08:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "medium"
+      }
+     },
+     {
+      "type": "mucus",
+      "observedAt": "2026-11-18T20:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "eggwhite"
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-19T08:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "light"
+      }
+     },
+     {
+      "type": "mucus",
+      "observedAt": "2026-11-19T20:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "dry"
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-20T08:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "medium"
+      }
+     },
+     {
+      "type": "mucus",
+      "observedAt": "2026-11-20T20:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "eggwhite"
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-21T08:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "medium"
+      }
+     },
+     {
+      "type": "mucus",
+      "observedAt": "2026-11-21T20:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "eggwhite"
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-22T08:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "light"
+      }
+     },
+     {
+      "type": "mucus",
+      "observedAt": "2026-11-22T20:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "sticky"
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-23T08:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "heavy"
+      }
+     },
+     {
+      "type": "mucus",
+      "observedAt": "2026-11-23T20:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "watery"
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-24T08:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "light"
+      }
+     },
+     {
+      "type": "mucus",
+      "observedAt": "2026-11-24T20:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "eggwhite"
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-25T08:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "medium"
+      }
+     }
+    ],
+    "pendingMutations": 45,
+    "conflicts": [],
+    "entitlements": [],
+    "purchaseState": "idle",
+    "lastPurchaseError": null,
+    "storeFinished": []
+   },
+   "end": {
+    "pack": "premom",
+    "observations": [
+     {
+      "type": "flow",
+      "observedAt": "2026-11-03T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "spotting"
+      }
+     },
+     {
+      "type": "mucus",
+      "observedAt": "2026-11-03T20:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "creamy"
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-04T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "light"
+      }
+     },
+     {
+      "type": "mucus",
+      "observedAt": "2026-11-04T20:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "sticky"
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-05T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "medium"
+      }
+     },
+     {
+      "type": "mucus",
+      "observedAt": "2026-11-05T20:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "watery"
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-06T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "light"
+      }
+     },
+     {
+      "type": "mucus",
+      "observedAt": "2026-11-06T20:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "dry"
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-07T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "light"
+      }
+     },
+     {
+      "type": "mucus",
+      "observedAt": "2026-11-07T20:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "watery"
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-08T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "spotting"
+      }
+     },
+     {
+      "type": "mucus",
+      "observedAt": "2026-11-08T20:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "creamy"
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-09T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "spotting"
+      }
+     },
+     {
+      "type": "mucus",
+      "observedAt": "2026-11-09T20:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "sticky"
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-10T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "spotting"
+      }
+     },
+     {
+      "type": "mucus",
+      "observedAt": "2026-11-10T20:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "creamy"
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-11T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "medium"
+      }
+     },
+     {
+      "type": "mucus",
+      "observedAt": "2026-11-11T20:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "watery"
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-12T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "medium"
+      }
+     },
+     {
+      "type": "mucus",
+      "observedAt": "2026-11-12T20:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "watery"
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-13T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "light"
+      }
+     },
+     {
+      "type": "mucus",
+      "observedAt": "2026-11-13T20:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "sticky"
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-14T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "medium"
+      }
+     },
+     {
+      "type": "mucus",
+      "observedAt": "2026-11-14T20:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "sticky"
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-15T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "heavy"
+      }
+     },
+     {
+      "type": "mucus",
+      "observedAt": "2026-11-15T20:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "creamy"
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-16T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "light"
+      }
+     },
+     {
+      "type": "mucus",
+      "observedAt": "2026-11-16T20:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "sticky"
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-17T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "medium"
+      }
+     },
+     {
+      "type": "mucus",
+      "observedAt": "2026-11-17T20:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "watery"
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-18T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "medium"
+      }
+     },
+     {
+      "type": "mucus",
+      "observedAt": "2026-11-18T20:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "eggwhite"
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-19T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "light"
+      }
+     },
+     {
+      "type": "mucus",
+      "observedAt": "2026-11-19T20:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "dry"
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-20T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "medium"
+      }
+     },
+     {
+      "type": "mucus",
+      "observedAt": "2026-11-20T20:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "eggwhite"
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-21T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "medium"
+      }
+     },
+     {
+      "type": "mucus",
+      "observedAt": "2026-11-21T20:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "eggwhite"
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-22T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "light"
+      }
+     },
+     {
+      "type": "mucus",
+      "observedAt": "2026-11-22T20:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "sticky"
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-23T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "heavy"
+      }
+     },
+     {
+      "type": "mucus",
+      "observedAt": "2026-11-23T20:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "watery"
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-24T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "light"
+      }
+     },
+     {
+      "type": "mucus",
+      "observedAt": "2026-11-24T20:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "eggwhite"
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-25T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "medium"
+      }
+     }
+    ],
+    "pendingMutations": 0,
+    "conflicts": [],
+    "entitlements": [],
+    "purchaseState": "idle",
+    "lastPurchaseError": null,
+    "storeFinished": []
+   }
+  },
+  "server": {
+   "observations": [
+    {
+     "type": "flow",
+     "observedAt": "2026-11-03T08:00:00Z",
+     "value": {
+      "code": "spotting"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "flow",
+     "observedAt": "2026-11-04T08:00:00Z",
+     "value": {
+      "code": "light"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "flow",
+     "observedAt": "2026-11-05T08:00:00Z",
+     "value": {
+      "code": "medium"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "flow",
+     "observedAt": "2026-11-06T08:00:00Z",
+     "value": {
+      "code": "light"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "flow",
+     "observedAt": "2026-11-07T08:00:00Z",
+     "value": {
+      "code": "light"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "flow",
+     "observedAt": "2026-11-08T08:00:00Z",
+     "value": {
+      "code": "spotting"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "flow",
+     "observedAt": "2026-11-09T08:00:00Z",
+     "value": {
+      "code": "spotting"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "flow",
+     "observedAt": "2026-11-10T08:00:00Z",
+     "value": {
+      "code": "spotting"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "flow",
+     "observedAt": "2026-11-11T08:00:00Z",
+     "value": {
+      "code": "medium"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "flow",
+     "observedAt": "2026-11-12T08:00:00Z",
+     "value": {
+      "code": "medium"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "flow",
+     "observedAt": "2026-11-13T08:00:00Z",
+     "value": {
+      "code": "light"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "flow",
+     "observedAt": "2026-11-14T08:00:00Z",
+     "value": {
+      "code": "medium"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "flow",
+     "observedAt": "2026-11-15T08:00:00Z",
+     "value": {
+      "code": "heavy"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "flow",
+     "observedAt": "2026-11-16T08:00:00Z",
+     "value": {
+      "code": "light"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "flow",
+     "observedAt": "2026-11-17T08:00:00Z",
+     "value": {
+      "code": "medium"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "flow",
+     "observedAt": "2026-11-18T08:00:00Z",
+     "value": {
+      "code": "medium"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "flow",
+     "observedAt": "2026-11-19T08:00:00Z",
+     "value": {
+      "code": "light"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "flow",
+     "observedAt": "2026-11-20T08:00:00Z",
+     "value": {
+      "code": "medium"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "flow",
+     "observedAt": "2026-11-21T08:00:00Z",
+     "value": {
+      "code": "medium"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "flow",
+     "observedAt": "2026-11-22T08:00:00Z",
+     "value": {
+      "code": "light"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "flow",
+     "observedAt": "2026-11-23T08:00:00Z",
+     "value": {
+      "code": "heavy"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "flow",
+     "observedAt": "2026-11-24T08:00:00Z",
+     "value": {
+      "code": "light"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "flow",
+     "observedAt": "2026-11-25T08:00:00Z",
+     "value": {
+      "code": "medium"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "mucus",
+     "observedAt": "2026-11-03T20:00:00Z",
+     "value": {
+      "code": "creamy"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "mucus",
+     "observedAt": "2026-11-04T20:00:00Z",
+     "value": {
+      "code": "sticky"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "mucus",
+     "observedAt": "2026-11-05T20:00:00Z",
+     "value": {
+      "code": "watery"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "mucus",
+     "observedAt": "2026-11-06T20:00:00Z",
+     "value": {
+      "code": "dry"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "mucus",
+     "observedAt": "2026-11-07T20:00:00Z",
+     "value": {
+      "code": "watery"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "mucus",
+     "observedAt": "2026-11-08T20:00:00Z",
+     "value": {
+      "code": "creamy"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "mucus",
+     "observedAt": "2026-11-09T20:00:00Z",
+     "value": {
+      "code": "sticky"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "mucus",
+     "observedAt": "2026-11-10T20:00:00Z",
+     "value": {
+      "code": "creamy"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "mucus",
+     "observedAt": "2026-11-11T20:00:00Z",
+     "value": {
+      "code": "watery"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "mucus",
+     "observedAt": "2026-11-12T20:00:00Z",
+     "value": {
+      "code": "watery"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "mucus",
+     "observedAt": "2026-11-13T20:00:00Z",
+     "value": {
+      "code": "sticky"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "mucus",
+     "observedAt": "2026-11-14T20:00:00Z",
+     "value": {
+      "code": "sticky"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "mucus",
+     "observedAt": "2026-11-15T20:00:00Z",
+     "value": {
+      "code": "creamy"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "mucus",
+     "observedAt": "2026-11-16T20:00:00Z",
+     "value": {
+      "code": "sticky"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "mucus",
+     "observedAt": "2026-11-17T20:00:00Z",
+     "value": {
+      "code": "watery"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "mucus",
+     "observedAt": "2026-11-18T20:00:00Z",
+     "value": {
+      "code": "eggwhite"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "mucus",
+     "observedAt": "2026-11-19T20:00:00Z",
+     "value": {
+      "code": "dry"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "mucus",
+     "observedAt": "2026-11-20T20:00:00Z",
+     "value": {
+      "code": "eggwhite"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "mucus",
+     "observedAt": "2026-11-21T20:00:00Z",
+     "value": {
+      "code": "eggwhite"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "mucus",
+     "observedAt": "2026-11-22T20:00:00Z",
+     "value": {
+      "code": "sticky"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "mucus",
+     "observedAt": "2026-11-23T20:00:00Z",
+     "value": {
+      "code": "watery"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "mucus",
+     "observedAt": "2026-11-24T20:00:00Z",
+     "value": {
+      "code": "eggwhite"
+     },
+     "source": "manual"
+    }
+   ],
+   "deleted": [],
+   "events": 45
+  }
+ }
+}

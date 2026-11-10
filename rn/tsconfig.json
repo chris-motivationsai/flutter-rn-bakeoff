@@ -1,0 +1,13 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "types": ["node", "jest"],
+    "paths": {
+      "zod": ["./node_modules/zod"]
+    }
+  },
+  "include": ["App.tsx", "index.ts", "app.config.ts", "src", "modules/strip-engine/index.ts", "tests", "device-test/main.tsx"]
+}

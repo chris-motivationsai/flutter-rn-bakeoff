@@ -1,0 +1,157 @@
+{
+ "id": "S09",
+ "title": "A push that the server applied but never answered must not duplicate or conflict",
+ "pack": "polly",
+ "user": "u-3353",
+ "steps": [
+  {
+   "do": "log_manual",
+   "at": "2026-11-03T06:40:00Z",
+   "type": "bbt",
+   "value": {
+    "celsius": 36.56
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-03T08:00:00Z",
+   "type": "flow",
+   "value": {
+    "code": "heavy"
+   }
+  },
+  {
+   "do": "server_control",
+   "at": "2026-11-03T08:01:00Z",
+   "body": {
+    "applyThenDrop": 1
+   }
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-03T08:02:00Z"
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-03T08:03:00Z",
+   "name": "after_drop"
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-03T08:05:00Z"
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-03T08:06:00Z",
+   "name": "end"
+  }
+ ],
+ "expect": {
+  "steps": [
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": false,
+    "error": "network"
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   }
+  ],
+  "snapshots": {
+   "after_drop": {
+    "pack": "polly",
+    "observations": [
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-03T06:40:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "celsius": 36.56
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-03T08:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "heavy"
+      }
+     }
+    ],
+    "pendingMutations": 2,
+    "conflicts": [],
+    "entitlements": [],
+    "purchaseState": "idle",
+    "lastPurchaseError": null,
+    "storeFinished": []
+   },
+   "end": {
+    "pack": "polly",
+    "observations": [
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-03T06:40:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.56
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-03T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "heavy"
+      }
+     }
+    ],
+    "pendingMutations": 0,
+    "conflicts": [],
+    "entitlements": [],
+    "purchaseState": "idle",
+    "lastPurchaseError": null,
+    "storeFinished": []
+   }
+  },
+  "server": {
+   "observations": [
+    {
+     "type": "bbt",
+     "observedAt": "2026-11-03T06:40:00Z",
+     "value": {
+      "celsius": 36.56
+     },
+     "source": "manual"
+    },
+    {
+     "type": "flow",
+     "observedAt": "2026-11-03T08:00:00Z",
+     "value": {
+      "code": "heavy"
+     },
+     "source": "manual"
+    }
+   ],
+   "deleted": [],
+   "events": 2
+  }
+ }
+}

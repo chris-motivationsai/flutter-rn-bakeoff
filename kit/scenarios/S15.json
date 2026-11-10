@@ -1,0 +1,266 @@
+{
+ "id": "S15",
+ "title": "Pull: changes from another app in the family arrive; types this pack lacks stay hidden but are kept",
+ "pack": "polly",
+ "user": "u-9750",
+ "steps": [
+  {
+   "do": "log_manual",
+   "at": "2026-11-03T08:00:00Z",
+   "type": "flow",
+   "value": {
+    "code": "light"
+   }
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-03T08:01:00Z"
+  },
+  {
+   "do": "server_control",
+   "at": "2026-11-03T21:00:00Z",
+   "body": {
+    "remote": {
+     "op": "upsert",
+     "type": "mucus",
+     "observedAt": "2026-11-03T20:00:00Z",
+     "value": {
+      "code": "creamy"
+     },
+     "source": "manual"
+    }
+   }
+  },
+  {
+   "do": "server_control",
+   "at": "2026-11-04T07:00:00Z",
+   "body": {
+    "remote": {
+     "op": "upsert",
+     "type": "bbt",
+     "observedAt": "2026-11-04T06:30:00Z",
+     "value": {
+      "celsius": 36.51
+     },
+     "source": "manual"
+    }
+   }
+  },
+  {
+   "do": "server_control",
+   "at": "2026-11-04T08:30:00Z",
+   "body": {
+    "remote": {
+     "op": "upsert",
+     "type": "flow",
+     "observedAt": "2026-11-04T08:00:00Z",
+     "value": {
+      "code": "medium"
+     },
+     "source": "manual"
+    }
+   }
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-04T09:00:00Z"
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-04T09:01:00Z",
+   "name": "after_pull"
+  },
+  {
+   "do": "edit",
+   "at": "2026-11-04T09:02:00Z",
+   "target": {
+    "type": "mucus",
+    "observedAt": "2026-11-03T20:00:00Z"
+   },
+   "value": {
+    "code": "dry"
+   }
+  },
+  {
+   "do": "delete",
+   "at": "2026-11-04T09:03:00Z",
+   "target": {
+    "type": "mucus",
+    "observedAt": "2026-11-03T20:00:00Z"
+   }
+  },
+  {
+   "do": "server_control",
+   "at": "2026-11-04T10:00:00Z",
+   "body": {
+    "remote": {
+     "op": "delete",
+     "type": "flow",
+     "observedAt": "2026-11-04T08:00:00Z"
+    }
+   }
+  },
+  {
+   "do": "restart",
+   "at": "2026-11-04T10:01:00Z"
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-04T10:02:00Z"
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-04T10:03:00Z",
+   "name": "end"
+  }
+ ],
+ "expect": {
+  "steps": [
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": false,
+    "error": "not_found"
+   },
+   {
+    "ok": false,
+    "error": "not_found"
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   }
+  ],
+  "snapshots": {
+   "after_pull": {
+    "pack": "polly",
+    "observations": [
+     {
+      "type": "flow",
+      "observedAt": "2026-11-03T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "light"
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-04T06:30:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.51
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-04T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "medium"
+      }
+     }
+    ],
+    "pendingMutations": 0,
+    "conflicts": [],
+    "entitlements": [],
+    "purchaseState": "idle",
+    "lastPurchaseError": null,
+    "storeFinished": []
+   },
+   "end": {
+    "pack": "polly",
+    "observations": [
+     {
+      "type": "flow",
+      "observedAt": "2026-11-03T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "light"
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-04T06:30:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.51
+      }
+     }
+    ],
+    "pendingMutations": 0,
+    "conflicts": [],
+    "entitlements": [],
+    "purchaseState": "idle",
+    "lastPurchaseError": null,
+    "storeFinished": []
+   }
+  },
+  "server": {
+   "observations": [
+    {
+     "type": "bbt",
+     "observedAt": "2026-11-04T06:30:00Z",
+     "value": {
+      "celsius": 36.51
+     },
+     "source": "manual"
+    },
+    {
+     "type": "flow",
+     "observedAt": "2026-11-03T08:00:00Z",
+     "value": {
+      "code": "light"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "mucus",
+     "observedAt": "2026-11-03T20:00:00Z",
+     "value": {
+      "code": "creamy"
+     },
+     "source": "manual"
+    }
+   ],
+   "deleted": [
+    {
+     "type": "flow",
+     "observedAt": "2026-11-04T08:00:00Z"
+    }
+   ],
+   "events": 1
+  }
+ }
+}

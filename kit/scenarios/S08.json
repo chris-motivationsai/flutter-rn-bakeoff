@@ -1,0 +1,273 @@
+{
+ "id": "S08",
+ "title": "Offline logging survives a restart and syncs later",
+ "pack": "premom",
+ "user": "u-9990",
+ "steps": [
+  {
+   "do": "server_control",
+   "at": "2026-11-03T06:00:00Z",
+   "body": {
+    "mode": "http503"
+   }
+  },
+  {
+   "do": "thermometer_session",
+   "at": "2026-11-03T06:30:00Z",
+   "type": "bbt",
+   "script": "fixtures/ble/session-011.json"
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-03T08:00:00Z",
+   "type": "flow",
+   "value": {
+    "code": "light"
+   }
+  },
+  {
+   "do": "scan_strip",
+   "at": "2026-11-03T14:00:00Z",
+   "type": "lh",
+   "image": "fixtures/strips/strip-012.pgm"
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-03T14:01:00Z"
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-03T14:02:00Z",
+   "name": "offline"
+  },
+  {
+   "do": "restart",
+   "at": "2026-11-03T18:00:00Z"
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-03T18:01:00Z",
+   "name": "after_restart"
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-03T18:02:00Z"
+  },
+  {
+   "do": "server_control",
+   "at": "2026-11-03T19:00:00Z",
+   "body": {
+    "mode": "ok"
+   }
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-03T19:01:00Z"
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-03T19:02:00Z",
+   "name": "end"
+  }
+ ],
+ "expect": {
+  "steps": [
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": false,
+    "error": "network"
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": false,
+    "error": "network"
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   }
+  ],
+  "snapshots": {
+   "offline": {
+    "pack": "premom",
+    "observations": [
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-03T06:30:00Z",
+      "source": "thermometer",
+      "sync": "pending",
+      "display": {
+       "celsius": 36.69
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-03T08:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "light"
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-03T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "pending",
+      "display": {
+       "level": "high",
+       "ratio": null,
+       "locked": true
+      }
+     }
+    ],
+    "pendingMutations": 3,
+    "conflicts": [],
+    "entitlements": [],
+    "purchaseState": "idle",
+    "lastPurchaseError": null,
+    "storeFinished": []
+   },
+   "after_restart": {
+    "pack": "premom",
+    "observations": [
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-03T06:30:00Z",
+      "source": "thermometer",
+      "sync": "pending",
+      "display": {
+       "celsius": 36.69
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-03T08:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "light"
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-03T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "pending",
+      "display": {
+       "level": "high",
+       "ratio": null,
+       "locked": true
+      }
+     }
+    ],
+    "pendingMutations": 3,
+    "conflicts": [],
+    "entitlements": [],
+    "purchaseState": "idle",
+    "lastPurchaseError": null,
+    "storeFinished": []
+   },
+   "end": {
+    "pack": "premom",
+    "observations": [
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-03T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.69
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-03T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "light"
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-03T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "high",
+       "ratio": null,
+       "locked": true
+      }
+     }
+    ],
+    "pendingMutations": 0,
+    "conflicts": [],
+    "entitlements": [],
+    "purchaseState": "idle",
+    "lastPurchaseError": null,
+    "storeFinished": []
+   }
+  },
+  "server": {
+   "observations": [
+    {
+     "type": "bbt",
+     "observedAt": "2026-11-03T06:30:00Z",
+     "value": {
+      "celsius": 36.69
+     },
+     "source": "thermometer",
+     "reader": {
+      "deviceModel": "EasyHome-EBT-300"
+     }
+    },
+    {
+     "type": "flow",
+     "observedAt": "2026-11-03T08:00:00Z",
+     "value": {
+      "code": "light"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "lh",
+     "observedAt": "2026-11-03T14:00:00Z",
+     "value": {
+      "ratio": 0.604
+     },
+     "source": "strip_reader",
+     "reader": {
+      "engineVersion": "bakeoff-1.0.0"
+     }
+    }
+   ],
+   "deleted": [],
+   "events": 0
+  }
+ }
+}

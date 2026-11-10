@@ -1,0 +1,220 @@
+{
+ "id": "S20",
+ "title": "Entitlement expires on the clock and the number locks again",
+ "pack": "premom",
+ "user": "u-4009",
+ "steps": [
+  {
+   "do": "scan_strip",
+   "at": "2026-11-03T14:00:00Z",
+   "type": "lh",
+   "image": "fixtures/strips/strip-019.pgm"
+  },
+  {
+   "do": "purchase",
+   "at": "2026-11-03T14:01:00Z",
+   "productId": "premium_monthly",
+   "store": [
+    {
+     "event": "purchased",
+     "txId": "tx-37dccbd4",
+     "receipt": "eyJ0eElkIjoidHgtMzdkY2NiZDQiLCJ1c2VySWQiOiJ1LTQwMDkiLCJwcm9kdWN0SWQiOiJwcmVtaXVtX21vbnRobHkiLCJlbnRpdGxlbWVudCI6InByZW1pdW0iLCJleHBpcmVzQXQiOiIyMDI2LTExLTI3VDE0OjAxOjAwWiJ9.52e3f7e612163a64ab111304df51f695f51b072e2dde13304b9920299dcc6964"
+    }
+   ]
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-26T14:00:00Z",
+   "name": "entitled"
+  },
+  {
+   "do": "server_control",
+   "at": "2026-11-27T13:00:00Z",
+   "body": {
+    "mode": "down"
+   }
+  },
+  {
+   "do": "restart",
+   "at": "2026-11-27T13:30:00Z"
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-27T13:59:00Z",
+   "name": "last_minute_offline"
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-27T14:02:00Z",
+   "name": "expired"
+  },
+  {
+   "do": "server_control",
+   "at": "2026-11-27T14:03:00Z",
+   "body": {
+    "mode": "ok"
+   }
+  },
+  {
+   "do": "purchase",
+   "at": "2026-11-27T14:04:00Z",
+   "productId": "premium_monthly",
+   "store": [
+    {
+     "event": "purchased",
+     "txId": "tx-53e1b824",
+     "receipt": "eyJ0eElkIjoidHgtNTNlMWI4MjQiLCJ1c2VySWQiOiJ1LTQwMDkiLCJwcm9kdWN0SWQiOiJwcmVtaXVtX21vbnRobHkiLCJlbnRpdGxlbWVudCI6InByZW1pdW0iLCJleHBpcmVzQXQiOiIyMDI2LTEyLTI3VDE0OjA0OjAwWiJ9.6f339786a12e6bfbe07f7c9d92377e6f47abe1cf9be38561446d24a26a09a8f6"
+    }
+   ]
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-27T14:05:00Z",
+   "name": "renewed"
+  }
+ ],
+ "expect": {
+  "steps": [
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   }
+  ],
+  "snapshots": {
+   "entitled": {
+    "pack": "premom",
+    "observations": [
+     {
+      "type": "lh",
+      "observedAt": "2026-11-03T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "pending",
+      "display": {
+       "level": "high",
+       "ratio": 0.621,
+       "locked": false
+      }
+     }
+    ],
+    "pendingMutations": 1,
+    "conflicts": [],
+    "entitlements": [
+     "premium"
+    ],
+    "purchaseState": "idle",
+    "lastPurchaseError": null,
+    "storeFinished": [
+     "tx-37dccbd4"
+    ]
+   },
+   "last_minute_offline": {
+    "pack": "premom",
+    "observations": [
+     {
+      "type": "lh",
+      "observedAt": "2026-11-03T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "pending",
+      "display": {
+       "level": "high",
+       "ratio": 0.621,
+       "locked": false
+      }
+     }
+    ],
+    "pendingMutations": 1,
+    "conflicts": [],
+    "entitlements": [
+     "premium"
+    ],
+    "purchaseState": "idle",
+    "lastPurchaseError": null,
+    "storeFinished": [
+     "tx-37dccbd4"
+    ]
+   },
+   "expired": {
+    "pack": "premom",
+    "observations": [
+     {
+      "type": "lh",
+      "observedAt": "2026-11-03T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "pending",
+      "display": {
+       "level": "high",
+       "ratio": null,
+       "locked": true
+      }
+     }
+    ],
+    "pendingMutations": 1,
+    "conflicts": [],
+    "entitlements": [],
+    "purchaseState": "idle",
+    "lastPurchaseError": null,
+    "storeFinished": [
+     "tx-37dccbd4"
+    ]
+   },
+   "renewed": {
+    "pack": "premom",
+    "observations": [
+     {
+      "type": "lh",
+      "observedAt": "2026-11-03T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "pending",
+      "display": {
+       "level": "high",
+       "ratio": 0.621,
+       "locked": false
+      }
+     }
+    ],
+    "pendingMutations": 1,
+    "conflicts": [],
+    "entitlements": [
+     "premium"
+    ],
+    "purchaseState": "idle",
+    "lastPurchaseError": null,
+    "storeFinished": [
+     "tx-37dccbd4",
+     "tx-53e1b824"
+    ]
+   }
+  },
+  "server": {
+   "observations": [],
+   "deleted": [],
+   "events": 1
+  }
+ }
+}

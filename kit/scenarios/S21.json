@@ -1,0 +1,74 @@
+{
+ "id": "S21",
+ "title": "Polly sells nothing: purchase is not available and the store is never called",
+ "pack": "polly",
+ "user": "u-3202",
+ "steps": [
+  {
+   "do": "scan_strip",
+   "at": "2026-11-03T14:00:00Z",
+   "type": "lh",
+   "image": "fixtures/strips/strip-020.pgm"
+  },
+  {
+   "do": "purchase",
+   "at": "2026-11-03T14:01:00Z",
+   "productId": "premium_monthly",
+   "store": [
+    {
+     "event": "purchased",
+     "txId": "tx-d9ee0c77",
+     "receipt": "eyJ0eElkIjoidHgtZDllZTBjNzciLCJ1c2VySWQiOiJ1LTMyMDIiLCJwcm9kdWN0SWQiOiJwcmVtaXVtX21vbnRobHkiLCJlbnRpdGxlbWVudCI6InByZW1pdW0iLCJleHBpcmVzQXQiOiIyMDI2LTEyLTAzVDE0OjAxOjAwWiJ9.0f229ea54d91ea9dc1d164778a7905018b0d153b7e29864e9aea86855a4e4cc6"
+    }
+   ]
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-03T14:02:00Z",
+   "name": "end"
+  }
+ ],
+ "expect": {
+  "steps": [
+   {
+    "ok": true
+   },
+   {
+    "ok": false,
+    "error": "not_available"
+   },
+   {
+    "ok": true
+   }
+  ],
+  "snapshots": {
+   "end": {
+    "pack": "polly",
+    "observations": [
+     {
+      "type": "lh",
+      "observedAt": "2026-11-03T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "pending",
+      "display": {
+       "level": "positive",
+       "ratio": null,
+       "locked": false
+      }
+     }
+    ],
+    "pendingMutations": 1,
+    "conflicts": [],
+    "entitlements": [],
+    "purchaseState": "idle",
+    "lastPurchaseError": "not_available",
+    "storeFinished": []
+   }
+  },
+  "server": {
+   "observations": [],
+   "deleted": [],
+   "events": 1
+  }
+ }
+}

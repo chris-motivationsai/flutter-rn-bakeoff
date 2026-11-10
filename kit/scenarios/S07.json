@@ -1,0 +1,143 @@
+{
+ "id": "S07",
+ "title": "Thermometer failures create nothing",
+ "pack": "premom",
+ "user": "u-2953",
+ "steps": [
+  {
+   "do": "thermometer_session",
+   "at": "2026-11-03T06:30:00Z",
+   "type": "bbt",
+   "script": "fixtures/ble/session-005.json"
+  },
+  {
+   "do": "thermometer_session",
+   "at": "2026-11-03T06:31:00Z",
+   "type": "bbt",
+   "script": "fixtures/ble/session-006.json"
+  },
+  {
+   "do": "thermometer_session",
+   "at": "2026-11-03T06:32:00Z",
+   "type": "bbt",
+   "script": "fixtures/ble/session-007.json"
+  },
+  {
+   "do": "thermometer_session",
+   "at": "2026-11-03T06:33:00Z",
+   "type": "bbt",
+   "script": "fixtures/ble/session-008.json"
+  },
+  {
+   "do": "thermometer_session",
+   "at": "2026-11-03T06:34:00Z",
+   "type": "bbt",
+   "script": "fixtures/ble/session-009.json"
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-03T06:35:00Z",
+   "name": "after_failures"
+  },
+  {
+   "do": "thermometer_session",
+   "at": "2026-11-03T06:36:00Z",
+   "type": "bbt",
+   "script": "fixtures/ble/session-010.json"
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-03T06:37:00Z"
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-03T06:38:00Z",
+   "name": "end"
+  }
+ ],
+ "expect": {
+  "steps": [
+   {
+    "ok": false,
+    "error": "thermo_no_final_reading"
+   },
+   {
+    "ok": false,
+    "error": "thermo_invalid_reading"
+   },
+   {
+    "ok": false,
+    "error": "thermo_invalid_reading"
+   },
+   {
+    "ok": false,
+    "error": "thermo_invalid_reading"
+   },
+   {
+    "ok": false,
+    "error": "thermo_invalid_reading"
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   }
+  ],
+  "snapshots": {
+   "after_failures": {
+    "pack": "premom",
+    "observations": [],
+    "pendingMutations": 0,
+    "conflicts": [],
+    "entitlements": [],
+    "purchaseState": "idle",
+    "lastPurchaseError": null,
+    "storeFinished": []
+   },
+   "end": {
+    "pack": "premom",
+    "observations": [
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-03T06:36:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.38
+      }
+     }
+    ],
+    "pendingMutations": 0,
+    "conflicts": [],
+    "entitlements": [],
+    "purchaseState": "idle",
+    "lastPurchaseError": null,
+    "storeFinished": []
+   }
+  },
+  "server": {
+   "observations": [
+    {
+     "type": "bbt",
+     "observedAt": "2026-11-03T06:36:00Z",
+     "value": {
+      "celsius": 36.38
+     },
+     "source": "thermometer",
+     "reader": {
+      "deviceModel": "EasyHome-EBT-100"
+     }
+    }
+   ],
+   "deleted": [],
+   "events": 1
+  }
+ }
+}

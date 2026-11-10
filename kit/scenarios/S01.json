@@ -1,0 +1,176 @@
+{
+ "id": "S01",
+ "title": "Manual logs online (Premom)",
+ "pack": "premom",
+ "user": "u-6643",
+ "steps": [
+  {
+   "do": "log_manual",
+   "at": "2026-11-03T06:40:00Z",
+   "type": "bbt",
+   "value": {
+    "celsius": 36.1
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-03T08:00:00Z",
+   "type": "flow",
+   "value": {
+    "code": "medium"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-03T20:10:00Z",
+   "type": "mucus",
+   "value": {
+    "code": "eggwhite"
+   }
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-03T20:11:00Z",
+   "name": "before_sync"
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-03T20:12:00Z"
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-03T20:13:00Z",
+   "name": "after_sync"
+  }
+ ],
+ "expect": {
+  "steps": [
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   }
+  ],
+  "snapshots": {
+   "before_sync": {
+    "pack": "premom",
+    "observations": [
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-03T06:40:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "celsius": 36.1
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-03T08:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "medium"
+      }
+     },
+     {
+      "type": "mucus",
+      "observedAt": "2026-11-03T20:10:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "eggwhite"
+      }
+     }
+    ],
+    "pendingMutations": 3,
+    "conflicts": [],
+    "entitlements": [],
+    "purchaseState": "idle",
+    "lastPurchaseError": null,
+    "storeFinished": []
+   },
+   "after_sync": {
+    "pack": "premom",
+    "observations": [
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-03T06:40:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.1
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-03T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "medium"
+      }
+     },
+     {
+      "type": "mucus",
+      "observedAt": "2026-11-03T20:10:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "eggwhite"
+      }
+     }
+    ],
+    "pendingMutations": 0,
+    "conflicts": [],
+    "entitlements": [],
+    "purchaseState": "idle",
+    "lastPurchaseError": null,
+    "storeFinished": []
+   }
+  },
+  "server": {
+   "observations": [
+    {
+     "type": "bbt",
+     "observedAt": "2026-11-03T06:40:00Z",
+     "value": {
+      "celsius": 36.1
+     },
+     "source": "manual"
+    },
+    {
+     "type": "flow",
+     "observedAt": "2026-11-03T08:00:00Z",
+     "value": {
+      "code": "medium"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "mucus",
+     "observedAt": "2026-11-03T20:10:00Z",
+     "value": {
+      "code": "eggwhite"
+     },
+     "source": "manual"
+    }
+   ],
+   "deleted": [],
+   "events": 3
+  }
+ }
+}

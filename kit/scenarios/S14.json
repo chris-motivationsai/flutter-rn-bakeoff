@@ -1,0 +1,191 @@
+{
+ "id": "S14",
+ "title": "Conflict with a remote delete, and a local delete that loses to a remote edit",
+ "pack": "premom",
+ "user": "u-5072",
+ "steps": [
+  {
+   "do": "log_manual",
+   "at": "2026-11-03T08:00:00Z",
+   "type": "flow",
+   "value": {
+    "code": "light"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-03T20:00:00Z",
+   "type": "mucus",
+   "value": {
+    "code": "creamy"
+   }
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-03T20:01:00Z"
+  },
+  {
+   "do": "server_control",
+   "at": "2026-11-04T09:00:00Z",
+   "body": {
+    "remote": {
+     "op": "delete",
+     "type": "flow",
+     "observedAt": "2026-11-03T08:00:00Z"
+    }
+   }
+  },
+  {
+   "do": "edit",
+   "at": "2026-11-04T09:01:00Z",
+   "target": {
+    "type": "flow",
+    "observedAt": "2026-11-03T08:00:00Z"
+   },
+   "value": {
+    "code": "heavy"
+   }
+  },
+  {
+   "do": "server_control",
+   "at": "2026-11-04T09:02:00Z",
+   "body": {
+    "remote": {
+     "op": "upsert",
+     "type": "mucus",
+     "observedAt": "2026-11-03T20:00:00Z",
+     "value": {
+      "code": "eggwhite"
+     },
+     "source": "manual"
+    }
+   }
+  },
+  {
+   "do": "delete",
+   "at": "2026-11-04T09:03:00Z",
+   "target": {
+    "type": "mucus",
+    "observedAt": "2026-11-03T20:00:00Z"
+   }
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-04T09:04:00Z",
+   "name": "before_sync"
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-04T09:05:00Z"
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-04T09:06:00Z",
+   "name": "end"
+  }
+ ],
+ "expect": {
+  "steps": [
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   }
+  ],
+  "snapshots": {
+   "before_sync": {
+    "pack": "premom",
+    "observations": [
+     {
+      "type": "flow",
+      "observedAt": "2026-11-03T08:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "heavy"
+      }
+     }
+    ],
+    "pendingMutations": 2,
+    "conflicts": [],
+    "entitlements": [],
+    "purchaseState": "idle",
+    "lastPurchaseError": null,
+    "storeFinished": []
+   },
+   "end": {
+    "pack": "premom",
+    "observations": [
+     {
+      "type": "mucus",
+      "observedAt": "2026-11-03T20:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "eggwhite"
+      }
+     }
+    ],
+    "pendingMutations": 0,
+    "conflicts": [
+     {
+      "type": "flow",
+      "observedAt": "2026-11-03T08:00:00Z"
+     },
+     {
+      "type": "mucus",
+      "observedAt": "2026-11-03T20:00:00Z"
+     }
+    ],
+    "entitlements": [],
+    "purchaseState": "idle",
+    "lastPurchaseError": null,
+    "storeFinished": []
+   }
+  },
+  "server": {
+   "observations": [
+    {
+     "type": "mucus",
+     "observedAt": "2026-11-03T20:00:00Z",
+     "value": {
+      "code": "eggwhite"
+     },
+     "source": "manual"
+    }
+   ],
+   "deleted": [
+    {
+     "type": "flow",
+     "observedAt": "2026-11-03T08:00:00Z"
+    }
+   ],
+   "events": 2
+  }
+ }
+}

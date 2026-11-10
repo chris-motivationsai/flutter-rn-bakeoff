@@ -1,0 +1,12 @@
+{
+  "packId": "polly",
+  "appName": "Polly",
+  "catalog": [
+    { "type": "bbt", "kind": "number", "field": "celsius", "min": 34.0, "max": 42.0, "sources": ["manual", "thermometer"] },
+    { "type": "lh", "kind": "strip", "sources": ["strip_reader"],
+      "levels": [ { "level": "negative", "minRatio": 0 }, { "level": "positive", "minRatio": 0.8 } ],
+      "numeric": null },
+    { "type": "flow", "kind": "enum", "values": ["spotting", "light", "medium", "heavy"], "sources": ["manual"] }
+  ],
+  "products": []
+}

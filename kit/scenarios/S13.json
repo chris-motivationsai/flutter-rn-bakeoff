@@ -1,0 +1,232 @@
+{
+ "id": "S13",
+ "title": "Conflict: another device edited first, the server copy wins and the loss is recorded",
+ "pack": "premom",
+ "user": "u-5886",
+ "steps": [
+  {
+   "do": "log_manual",
+   "at": "2026-11-03T08:00:00Z",
+   "type": "flow",
+   "value": {
+    "code": "heavy"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-03T08:01:00Z",
+   "type": "bbt",
+   "value": {
+    "celsius": 36.6
+   }
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-03T08:02:00Z"
+  },
+  {
+   "do": "server_control",
+   "at": "2026-11-03T09:00:00Z",
+   "body": {
+    "remote": {
+     "op": "upsert",
+     "type": "flow",
+     "observedAt": "2026-11-03T08:00:00Z",
+     "value": {
+      "code": "spotting"
+     },
+     "source": "manual"
+    }
+   }
+  },
+  {
+   "do": "edit",
+   "at": "2026-11-03T09:01:00Z",
+   "target": {
+    "type": "flow",
+    "observedAt": "2026-11-03T08:00:00Z"
+   },
+   "value": {
+    "code": "light"
+   }
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-03T09:02:00Z",
+   "name": "before_sync"
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-03T09:03:00Z"
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-03T09:04:00Z",
+   "name": "after_conflict"
+  },
+  {
+   "do": "restart",
+   "at": "2026-11-03T09:05:00Z"
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-03T09:06:00Z",
+   "name": "end"
+  }
+ ],
+ "expect": {
+  "steps": [
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   }
+  ],
+  "snapshots": {
+   "before_sync": {
+    "pack": "premom",
+    "observations": [
+     {
+      "type": "flow",
+      "observedAt": "2026-11-03T08:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "light"
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-03T08:01:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.6
+      }
+     }
+    ],
+    "pendingMutations": 1,
+    "conflicts": [],
+    "entitlements": [],
+    "purchaseState": "idle",
+    "lastPurchaseError": null,
+    "storeFinished": []
+   },
+   "after_conflict": {
+    "pack": "premom",
+    "observations": [
+     {
+      "type": "flow",
+      "observedAt": "2026-11-03T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "spotting"
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-03T08:01:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.6
+      }
+     }
+    ],
+    "pendingMutations": 0,
+    "conflicts": [
+     {
+      "type": "flow",
+      "observedAt": "2026-11-03T08:00:00Z"
+     }
+    ],
+    "entitlements": [],
+    "purchaseState": "idle",
+    "lastPurchaseError": null,
+    "storeFinished": []
+   },
+   "end": {
+    "pack": "premom",
+    "observations": [
+     {
+      "type": "flow",
+      "observedAt": "2026-11-03T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "spotting"
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-03T08:01:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.6
+      }
+     }
+    ],
+    "pendingMutations": 0,
+    "conflicts": [
+     {
+      "type": "flow",
+      "observedAt": "2026-11-03T08:00:00Z"
+     }
+    ],
+    "entitlements": [],
+    "purchaseState": "idle",
+    "lastPurchaseError": null,
+    "storeFinished": []
+   }
+  },
+  "server": {
+   "observations": [
+    {
+     "type": "bbt",
+     "observedAt": "2026-11-03T08:01:00Z",
+     "value": {
+      "celsius": 36.6
+     },
+     "source": "manual"
+    },
+    {
+     "type": "flow",
+     "observedAt": "2026-11-03T08:00:00Z",
+     "value": {
+      "code": "spotting"
+     },
+     "source": "manual"
+    }
+   ],
+   "deleted": [],
+   "events": 2
+  }
+ }
+}

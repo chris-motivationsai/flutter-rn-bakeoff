@@ -1,0 +1,223 @@
+{
+ "id": "S16",
+ "title": "Purchase unlocks the numeric LH result only after the server verifies",
+ "pack": "premom",
+ "user": "u-3887",
+ "steps": [
+  {
+   "do": "scan_strip",
+   "at": "2026-11-03T14:00:00Z",
+   "type": "lh",
+   "image": "fixtures/strips/strip-014.pgm"
+  },
+  {
+   "do": "scan_strip",
+   "at": "2026-11-04T14:00:00Z",
+   "type": "lh",
+   "image": "fixtures/strips/strip-015.pgm"
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-04T14:01:00Z",
+   "name": "locked"
+  },
+  {
+   "do": "purchase",
+   "at": "2026-11-04T14:02:00Z",
+   "productId": "premium_monthly",
+   "store": [
+    {
+     "event": "pending"
+    },
+    {
+     "event": "purchased",
+     "txId": "tx-015bfb9c",
+     "receipt": "eyJ0eElkIjoidHgtMDE1YmZiOWMiLCJ1c2VySWQiOiJ1LTM4ODciLCJwcm9kdWN0SWQiOiJwcmVtaXVtX21vbnRobHkiLCJlbnRpdGxlbWVudCI6InByZW1pdW0iLCJleHBpcmVzQXQiOiIyMDI2LTEyLTA0VDE0OjAyOjAwWiJ9.045ee47c482eba55adac205cf99e739da7131eb1d0893d231585f8aef57dcec2"
+    }
+   ]
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-04T14:03:00Z",
+   "name": "unlocked"
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-04T14:04:00Z"
+  },
+  {
+   "do": "restart",
+   "at": "2026-11-04T15:00:00Z"
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-04T15:01:00Z",
+   "name": "end"
+  }
+ ],
+ "expect": {
+  "steps": [
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   }
+  ],
+  "snapshots": {
+   "locked": {
+    "pack": "premom",
+    "observations": [
+     {
+      "type": "lh",
+      "observedAt": "2026-11-03T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "pending",
+      "display": {
+       "level": "high",
+       "ratio": null,
+       "locked": true
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-04T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "pending",
+      "display": {
+       "level": "peak",
+       "ratio": null,
+       "locked": true
+      }
+     }
+    ],
+    "pendingMutations": 2,
+    "conflicts": [],
+    "entitlements": [],
+    "purchaseState": "idle",
+    "lastPurchaseError": null,
+    "storeFinished": []
+   },
+   "unlocked": {
+    "pack": "premom",
+    "observations": [
+     {
+      "type": "lh",
+      "observedAt": "2026-11-03T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "pending",
+      "display": {
+       "level": "high",
+       "ratio": 0.689,
+       "locked": false
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-04T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "pending",
+      "display": {
+       "level": "peak",
+       "ratio": 1.296,
+       "locked": false
+      }
+     }
+    ],
+    "pendingMutations": 2,
+    "conflicts": [],
+    "entitlements": [
+     "premium"
+    ],
+    "purchaseState": "idle",
+    "lastPurchaseError": null,
+    "storeFinished": [
+     "tx-015bfb9c"
+    ]
+   },
+   "end": {
+    "pack": "premom",
+    "observations": [
+     {
+      "type": "lh",
+      "observedAt": "2026-11-03T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "high",
+       "ratio": 0.689,
+       "locked": false
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-04T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "peak",
+       "ratio": 1.296,
+       "locked": false
+      }
+     }
+    ],
+    "pendingMutations": 0,
+    "conflicts": [],
+    "entitlements": [
+     "premium"
+    ],
+    "purchaseState": "idle",
+    "lastPurchaseError": null,
+    "storeFinished": [
+     "tx-015bfb9c"
+    ]
+   }
+  },
+  "server": {
+   "observations": [
+    {
+     "type": "lh",
+     "observedAt": "2026-11-03T14:00:00Z",
+     "value": {
+      "ratio": 0.689
+     },
+     "source": "strip_reader",
+     "reader": {
+      "engineVersion": "bakeoff-1.0.0"
+     }
+    },
+    {
+     "type": "lh",
+     "observedAt": "2026-11-04T14:00:00Z",
+     "value": {
+      "ratio": 1.296
+     },
+     "source": "strip_reader",
+     "reader": {
+      "engineVersion": "bakeoff-1.0.0"
+     }
+    }
+   ],
+   "deleted": [],
+   "events": 2
+  }
+ }
+}

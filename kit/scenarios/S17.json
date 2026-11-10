@@ -1,0 +1,197 @@
+{
+ "id": "S17",
+ "title": "Purchases that do not complete: cancelled, store error, pending",
+ "pack": "premom",
+ "user": "u-8492",
+ "steps": [
+  {
+   "do": "scan_strip",
+   "at": "2026-11-03T14:00:00Z",
+   "type": "lh",
+   "image": "fixtures/strips/strip-016.pgm"
+  },
+  {
+   "do": "purchase",
+   "at": "2026-11-03T14:01:00Z",
+   "productId": "premium_monthly",
+   "store": [
+    {
+     "event": "cancelled"
+    }
+   ]
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-03T14:02:00Z",
+   "name": "after_cancel"
+  },
+  {
+   "do": "purchase",
+   "at": "2026-11-03T14:03:00Z",
+   "productId": "premium_monthly",
+   "store": [
+    {
+     "event": "error",
+     "code": "billing_unavailable"
+    }
+   ]
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-03T14:04:00Z",
+   "name": "after_error"
+  },
+  {
+   "do": "purchase",
+   "at": "2026-11-03T14:05:00Z",
+   "productId": "premium_monthly",
+   "store": [
+    {
+     "event": "pending"
+    }
+   ]
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-03T14:06:00Z",
+   "name": "pending"
+  },
+  {
+   "do": "restart",
+   "at": "2026-11-03T14:07:00Z"
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-03T14:08:00Z",
+   "name": "end"
+  }
+ ],
+ "expect": {
+  "steps": [
+   {
+    "ok": true
+   },
+   {
+    "ok": false,
+    "error": "cancelled"
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": false,
+    "error": "store_error"
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   }
+  ],
+  "snapshots": {
+   "after_cancel": {
+    "pack": "premom",
+    "observations": [
+     {
+      "type": "lh",
+      "observedAt": "2026-11-03T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "pending",
+      "display": {
+       "level": "high",
+       "ratio": null,
+       "locked": true
+      }
+     }
+    ],
+    "pendingMutations": 1,
+    "conflicts": [],
+    "entitlements": [],
+    "purchaseState": "idle",
+    "lastPurchaseError": null,
+    "storeFinished": []
+   },
+   "after_error": {
+    "pack": "premom",
+    "observations": [
+     {
+      "type": "lh",
+      "observedAt": "2026-11-03T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "pending",
+      "display": {
+       "level": "high",
+       "ratio": null,
+       "locked": true
+      }
+     }
+    ],
+    "pendingMutations": 1,
+    "conflicts": [],
+    "entitlements": [],
+    "purchaseState": "idle",
+    "lastPurchaseError": "store_error",
+    "storeFinished": []
+   },
+   "pending": {
+    "pack": "premom",
+    "observations": [
+     {
+      "type": "lh",
+      "observedAt": "2026-11-03T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "pending",
+      "display": {
+       "level": "high",
+       "ratio": null,
+       "locked": true
+      }
+     }
+    ],
+    "pendingMutations": 1,
+    "conflicts": [],
+    "entitlements": [],
+    "purchaseState": "pending",
+    "lastPurchaseError": null,
+    "storeFinished": []
+   },
+   "end": {
+    "pack": "premom",
+    "observations": [
+     {
+      "type": "lh",
+      "observedAt": "2026-11-03T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "pending",
+      "display": {
+       "level": "high",
+       "ratio": null,
+       "locked": true
+      }
+     }
+    ],
+    "pendingMutations": 1,
+    "conflicts": [],
+    "entitlements": [],
+    "purchaseState": "idle",
+    "lastPurchaseError": null,
+    "storeFinished": []
+   }
+  },
+  "server": {
+   "observations": [],
+   "deleted": [],
+   "events": 1
+  }
+ }
+}

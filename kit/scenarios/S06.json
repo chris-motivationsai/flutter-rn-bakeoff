@@ -1,0 +1,162 @@
+{
+ "id": "S06",
+ "title": "Thermometer: final reading only, Fahrenheit converted, device timestamp honoured",
+ "pack": "polly",
+ "user": "u-2267",
+ "steps": [
+  {
+   "do": "thermometer_session",
+   "at": "2026-11-03T06:30:00Z",
+   "type": "bbt",
+   "script": "fixtures/ble/session-001.json"
+  },
+  {
+   "do": "thermometer_session",
+   "at": "2026-11-04T06:31:00Z",
+   "type": "bbt",
+   "script": "fixtures/ble/session-002.json"
+  },
+  {
+   "do": "thermometer_session",
+   "at": "2026-11-05T06:32:00Z",
+   "type": "bbt",
+   "script": "fixtures/ble/session-003.json"
+  },
+  {
+   "do": "thermometer_session",
+   "at": "2026-11-06T06:33:00Z",
+   "type": "bbt",
+   "script": "fixtures/ble/session-004.json"
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-06T06:40:00Z"
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-06T06:41:00Z",
+   "name": "end"
+  }
+ ],
+ "expect": {
+  "steps": [
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   }
+  ],
+  "snapshots": {
+   "end": {
+    "pack": "polly",
+    "observations": [
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-03T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.68
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-04T06:31:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.56
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-05T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.62
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-06T06:33:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.22
+      }
+     }
+    ],
+    "pendingMutations": 0,
+    "conflicts": [],
+    "entitlements": [],
+    "purchaseState": "idle",
+    "lastPurchaseError": null,
+    "storeFinished": []
+   }
+  },
+  "server": {
+   "observations": [
+    {
+     "type": "bbt",
+     "observedAt": "2026-11-03T06:30:00Z",
+     "value": {
+      "celsius": 36.68
+     },
+     "source": "thermometer",
+     "reader": {
+      "deviceModel": "Polly-Thermo-1"
+     }
+    },
+    {
+     "type": "bbt",
+     "observedAt": "2026-11-04T06:31:00Z",
+     "value": {
+      "celsius": 36.56
+     },
+     "source": "thermometer",
+     "reader": {
+      "deviceModel": "EasyHome-EBT-300"
+     }
+    },
+    {
+     "type": "bbt",
+     "observedAt": "2026-11-05T06:30:00Z",
+     "value": {
+      "celsius": 36.62
+     },
+     "source": "thermometer",
+     "reader": {
+      "deviceModel": "Polly-Thermo-1"
+     }
+    },
+    {
+     "type": "bbt",
+     "observedAt": "2026-11-06T06:33:00Z",
+     "value": {
+      "celsius": 36.22
+     },
+     "source": "thermometer",
+     "reader": {
+      "deviceModel": "Polly-Thermo-1"
+     }
+    }
+   ],
+   "deleted": [],
+   "events": 4
+  }
+ }
+}

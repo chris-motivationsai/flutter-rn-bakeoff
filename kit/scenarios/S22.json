@@ -1,0 +1,210 @@
+{
+ "id": "S22",
+ "title": "Restore purchases",
+ "pack": "premom",
+ "user": "u-1862",
+ "steps": [
+  {
+   "do": "scan_strip",
+   "at": "2026-11-03T14:00:00Z",
+   "type": "lh",
+   "image": "fixtures/strips/strip-021.pgm"
+  },
+  {
+   "do": "restore",
+   "at": "2026-11-03T14:01:00Z",
+   "store": [
+    {
+     "txId": "tx-807e2bd4",
+     "receipt": "eyJ0eElkIjoidHgtODA3ZTJiZDQiLCJ1c2VySWQiOiJ1LTE4NjIiLCJwcm9kdWN0SWQiOiJwcmVtaXVtX21vbnRobHkiLCJlbnRpdGxlbWVudCI6InByZW1pdW0iLCJleHBpcmVzQXQiOiIyMDI2LTEyLTAzVDE0OjAxOjAwWiJ9.490b697d3fa9db977df92809d2bc3bdefef7d5aae6af06a06e5beaa9450de3ed"
+    },
+    {
+     "txId": "tx-8d4b33aa",
+     "receipt": "eyJ0eElkIjoidHgtOGQ0YjMzYWEiLCJ1c2VySWQiOiJ1LXNvbWVvbmUtZWxzZSIsInByb2R1Y3RJZCI6InByZW1pdW1fbW9udGhseSIsImVudGl0bGVtZW50IjoicHJlbWl1bSIsImV4cGlyZXNBdCI6IjIwMjYtMTItMDNUMTQ6MDE6MDBaIn0.21c5488805d1c36d149ed56fce42c8cedf24b164f113d53e1adc01b3cc37e0da"
+    }
+   ]
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-03T14:02:00Z",
+   "name": "restored"
+  },
+  {
+   "do": "restart",
+   "at": "2026-11-03T14:03:00Z"
+  },
+  {
+   "do": "server_control",
+   "at": "2026-11-03T14:04:00Z",
+   "body": {
+    "mode": "down"
+   }
+  },
+  {
+   "do": "restore",
+   "at": "2026-11-03T14:05:00Z",
+   "store": [
+    {
+     "txId": "tx-2881c295",
+     "receipt": "eyJ0eElkIjoidHgtMjg4MWMyOTUiLCJ1c2VySWQiOiJ1LTE4NjIiLCJwcm9kdWN0SWQiOiJwcmVtaXVtX21vbnRobHkiLCJlbnRpdGxlbWVudCI6InByZW1pdW0iLCJleHBpcmVzQXQiOiIyMDI2LTEyLTAzVDE0OjA1OjAwWiJ9.7609b0e7cf2b5412973d8b551445a5754e1931936b72362351c3e94bab58f020"
+    }
+   ]
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-03T14:06:00Z",
+   "name": "queued"
+  },
+  {
+   "do": "server_control",
+   "at": "2026-11-03T14:07:00Z",
+   "body": {
+    "mode": "ok"
+   }
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-03T14:08:00Z"
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-03T14:09:00Z",
+   "name": "end"
+  }
+ ],
+ "expect": {
+  "steps": [
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   }
+  ],
+  "snapshots": {
+   "restored": {
+    "pack": "premom",
+    "observations": [
+     {
+      "type": "lh",
+      "observedAt": "2026-11-03T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "pending",
+      "display": {
+       "level": "high",
+       "ratio": 0.697,
+       "locked": false
+      }
+     }
+    ],
+    "pendingMutations": 1,
+    "conflicts": [],
+    "entitlements": [
+     "premium"
+    ],
+    "purchaseState": "idle",
+    "lastPurchaseError": "receipt_user_mismatch",
+    "storeFinished": [
+     "tx-807e2bd4",
+     "tx-8d4b33aa"
+    ]
+   },
+   "queued": {
+    "pack": "premom",
+    "observations": [
+     {
+      "type": "lh",
+      "observedAt": "2026-11-03T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "pending",
+      "display": {
+       "level": "high",
+       "ratio": 0.697,
+       "locked": false
+      }
+     }
+    ],
+    "pendingMutations": 1,
+    "conflicts": [],
+    "entitlements": [
+     "premium"
+    ],
+    "purchaseState": "verifying",
+    "lastPurchaseError": null,
+    "storeFinished": [
+     "tx-807e2bd4",
+     "tx-8d4b33aa"
+    ]
+   },
+   "end": {
+    "pack": "premom",
+    "observations": [
+     {
+      "type": "lh",
+      "observedAt": "2026-11-03T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "high",
+       "ratio": 0.697,
+       "locked": false
+      }
+     }
+    ],
+    "pendingMutations": 0,
+    "conflicts": [],
+    "entitlements": [
+     "premium"
+    ],
+    "purchaseState": "idle",
+    "lastPurchaseError": null,
+    "storeFinished": [
+     "tx-2881c295",
+     "tx-807e2bd4",
+     "tx-8d4b33aa"
+    ]
+   }
+  },
+  "server": {
+   "observations": [
+    {
+     "type": "lh",
+     "observedAt": "2026-11-03T14:00:00Z",
+     "value": {
+      "ratio": 0.697
+     },
+     "source": "strip_reader",
+     "reader": {
+      "engineVersion": "bakeoff-1.0.0"
+     }
+    }
+   ],
+   "deleted": [],
+   "events": 1
+  }
+ }
+}

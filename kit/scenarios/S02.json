@@ -1,0 +1,150 @@
+{
+ "id": "S02",
+ "title": "Catalog comes from the pack: Polly rejects what it does not have",
+ "pack": "polly",
+ "user": "u-9715",
+ "steps": [
+  {
+   "do": "log_manual",
+   "at": "2026-11-03T08:00:00Z",
+   "type": "mucus",
+   "value": {
+    "code": "sticky"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-03T08:01:00Z",
+   "type": "bbt",
+   "value": {
+    "celsius": 42.6
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-03T08:02:00Z",
+   "type": "flow",
+   "value": {
+    "code": "eggwhite"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-03T08:03:00Z",
+   "type": "lh",
+   "value": {
+    "ratio": 0.9
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-03T08:04:00Z",
+   "type": "flow",
+   "value": {
+    "code": "light"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-03T08:05:00Z",
+   "type": "bbt",
+   "value": {
+    "celsius": 36.9
+   }
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-03T08:06:00Z"
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-03T08:07:00Z",
+   "name": "end"
+  }
+ ],
+ "expect": {
+  "steps": [
+   {
+    "ok": false,
+    "error": "unknown_type"
+   },
+   {
+    "ok": false,
+    "error": "invalid_value"
+   },
+   {
+    "ok": false,
+    "error": "invalid_value"
+   },
+   {
+    "ok": false,
+    "error": "source_not_allowed"
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   }
+  ],
+  "snapshots": {
+   "end": {
+    "pack": "polly",
+    "observations": [
+     {
+      "type": "flow",
+      "observedAt": "2026-11-03T08:04:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "light"
+      }
+     },
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-03T08:05:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.9
+      }
+     }
+    ],
+    "pendingMutations": 0,
+    "conflicts": [],
+    "entitlements": [],
+    "purchaseState": "idle",
+    "lastPurchaseError": null,
+    "storeFinished": []
+   }
+  },
+  "server": {
+   "observations": [
+    {
+     "type": "bbt",
+     "observedAt": "2026-11-03T08:05:00Z",
+     "value": {
+      "celsius": 36.9
+     },
+     "source": "manual"
+    },
+    {
+     "type": "flow",
+     "observedAt": "2026-11-03T08:04:00Z",
+     "value": {
+      "code": "light"
+     },
+     "source": "manual"
+    }
+   ],
+   "deleted": [],
+   "events": 2
+  }
+ }
+}

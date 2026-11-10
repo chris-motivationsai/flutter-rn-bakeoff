@@ -1,0 +1,284 @@
+{
+ "id": "S11",
+ "title": "Edit and delete; reader results are read-only",
+ "pack": "premom",
+ "user": "u-1200",
+ "steps": [
+  {
+   "do": "log_manual",
+   "at": "2026-11-03T08:00:00Z",
+   "type": "flow",
+   "value": {
+    "code": "heavy"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-03T20:00:00Z",
+   "type": "mucus",
+   "value": {
+    "code": "eggwhite"
+   }
+  },
+  {
+   "do": "scan_strip",
+   "at": "2026-11-03T14:00:00Z",
+   "type": "lh",
+   "image": "fixtures/strips/strip-013.pgm"
+  },
+  {
+   "do": "thermometer_session",
+   "at": "2026-11-03T06:30:00Z",
+   "type": "bbt",
+   "script": "fixtures/ble/session-012.json"
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-03T20:01:00Z"
+  },
+  {
+   "do": "edit",
+   "at": "2026-11-03T20:02:00Z",
+   "target": {
+    "type": "flow",
+    "observedAt": "2026-11-03T08:00:00Z"
+   },
+   "value": {
+    "code": "spotting"
+   }
+  },
+  {
+   "do": "edit",
+   "at": "2026-11-03T20:03:00Z",
+   "target": {
+    "type": "lh",
+    "observedAt": "2026-11-03T14:00:00Z"
+   },
+   "value": {
+    "ratio": 1.5
+   }
+  },
+  {
+   "do": "edit",
+   "at": "2026-11-03T20:04:00Z",
+   "target": {
+    "type": "bbt",
+    "observedAt": "2026-11-03T06:30:00Z"
+   },
+   "value": {
+    "celsius": 36
+   }
+  },
+  {
+   "do": "edit",
+   "at": "2026-11-03T20:05:00Z",
+   "target": {
+    "type": "mucus",
+    "observedAt": "2026-11-03T20:00:00Z"
+   },
+   "value": {
+    "code": "purple"
+   }
+  },
+  {
+   "do": "edit",
+   "at": "2026-11-03T20:06:00Z",
+   "target": {
+    "type": "flow",
+    "observedAt": "2026-11-08T08:00:00Z"
+   },
+   "value": {
+    "code": "light"
+   }
+  },
+  {
+   "do": "delete",
+   "at": "2026-11-03T20:07:00Z",
+   "target": {
+    "type": "mucus",
+    "observedAt": "2026-11-03T20:00:00Z"
+   }
+  },
+  {
+   "do": "delete",
+   "at": "2026-11-03T20:08:00Z",
+   "target": {
+    "type": "lh",
+    "observedAt": "2026-11-03T14:00:00Z"
+   }
+  },
+  {
+   "do": "delete",
+   "at": "2026-11-03T20:09:00Z",
+   "target": {
+    "type": "mucus",
+    "observedAt": "2026-11-03T20:00:00Z"
+   }
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-03T20:10:00Z",
+   "name": "before_sync"
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-03T20:11:00Z"
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-03T20:12:00Z",
+   "name": "end"
+  }
+ ],
+ "expect": {
+  "steps": [
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": false,
+    "error": "read_only"
+   },
+   {
+    "ok": false,
+    "error": "read_only"
+   },
+   {
+    "ok": false,
+    "error": "invalid_value"
+   },
+   {
+    "ok": false,
+    "error": "not_found"
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": false,
+    "error": "not_found"
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   }
+  ],
+  "snapshots": {
+   "before_sync": {
+    "pack": "premom",
+    "observations": [
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-03T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.4
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-03T08:00:00Z",
+      "source": "manual",
+      "sync": "pending",
+      "display": {
+       "code": "spotting"
+      }
+     }
+    ],
+    "pendingMutations": 3,
+    "conflicts": [],
+    "entitlements": [],
+    "purchaseState": "idle",
+    "lastPurchaseError": null,
+    "storeFinished": []
+   },
+   "end": {
+    "pack": "premom",
+    "observations": [
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-03T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.4
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-03T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "spotting"
+      }
+     }
+    ],
+    "pendingMutations": 0,
+    "conflicts": [],
+    "entitlements": [],
+    "purchaseState": "idle",
+    "lastPurchaseError": null,
+    "storeFinished": []
+   }
+  },
+  "server": {
+   "observations": [
+    {
+     "type": "bbt",
+     "observedAt": "2026-11-03T06:30:00Z",
+     "value": {
+      "celsius": 36.4
+     },
+     "source": "thermometer",
+     "reader": {
+      "deviceModel": "Polly-Thermo-1"
+     }
+    },
+    {
+     "type": "flow",
+     "observedAt": "2026-11-03T08:00:00Z",
+     "value": {
+      "code": "spotting"
+     },
+     "source": "manual"
+    }
+   ],
+   "deleted": [
+    {
+     "type": "lh",
+     "observedAt": "2026-11-03T14:00:00Z"
+    },
+    {
+     "type": "mucus",
+     "observedAt": "2026-11-03T20:00:00Z"
+    }
+   ],
+   "events": 4
+  }
+ }
+}

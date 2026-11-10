@@ -1,0 +1,139 @@
+{
+ "id": "S03",
+ "title": "Strip levels in Premom without premium: numeric result is locked",
+ "pack": "premom",
+ "user": "u-5097",
+ "steps": [
+  {
+   "do": "scan_strip",
+   "at": "2026-11-03T14:00:00Z",
+   "type": "lh",
+   "image": "fixtures/strips/strip-001.pgm"
+  },
+  {
+   "do": "scan_strip",
+   "at": "2026-11-04T14:00:00Z",
+   "type": "lh",
+   "image": "fixtures/strips/strip-002.pgm"
+  },
+  {
+   "do": "scan_strip",
+   "at": "2026-11-05T14:00:00Z",
+   "type": "lh",
+   "image": "fixtures/strips/strip-003.pgm"
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-05T14:05:00Z"
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-05T14:06:00Z",
+   "name": "end"
+  }
+ ],
+ "expect": {
+  "steps": [
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   }
+  ],
+  "snapshots": {
+   "end": {
+    "pack": "premom",
+    "observations": [
+     {
+      "type": "lh",
+      "observedAt": "2026-11-03T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "low",
+       "ratio": null,
+       "locked": true
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-04T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "high",
+       "ratio": null,
+       "locked": true
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-05T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "peak",
+       "ratio": null,
+       "locked": true
+      }
+     }
+    ],
+    "pendingMutations": 0,
+    "conflicts": [],
+    "entitlements": [],
+    "purchaseState": "idle",
+    "lastPurchaseError": null,
+    "storeFinished": []
+   }
+  },
+  "server": {
+   "observations": [
+    {
+     "type": "lh",
+     "observedAt": "2026-11-03T14:00:00Z",
+     "value": {
+      "ratio": 0.234
+     },
+     "source": "strip_reader",
+     "reader": {
+      "engineVersion": "bakeoff-1.0.0"
+     }
+    },
+    {
+     "type": "lh",
+     "observedAt": "2026-11-04T14:00:00Z",
+     "value": {
+      "ratio": 0.674
+     },
+     "source": "strip_reader",
+     "reader": {
+      "engineVersion": "bakeoff-1.0.0"
+     }
+    },
+    {
+     "type": "lh",
+     "observedAt": "2026-11-05T14:00:00Z",
+     "value": {
+      "ratio": 1.131
+     },
+     "source": "strip_reader",
+     "reader": {
+      "engineVersion": "bakeoff-1.0.0"
+     }
+    }
+   ],
+   "deleted": [],
+   "events": 3
+  }
+ }
+}

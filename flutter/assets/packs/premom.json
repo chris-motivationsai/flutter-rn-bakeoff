@@ -1,0 +1,13 @@
+{
+  "packId": "premom",
+  "appName": "Premom",
+  "catalog": [
+    { "type": "bbt", "kind": "number", "field": "celsius", "min": 34.0, "max": 42.0, "sources": ["manual", "thermometer"] },
+    { "type": "lh", "kind": "strip", "sources": ["strip_reader"],
+      "levels": [ { "level": "low", "minRatio": 0 }, { "level": "high", "minRatio": 0.5 }, { "level": "peak", "minRatio": 1.0 } ],
+      "numeric": { "requiresEntitlement": "premium" } },
+    { "type": "flow", "kind": "enum", "values": ["spotting", "light", "medium", "heavy"], "sources": ["manual"] },
+    { "type": "mucus", "kind": "enum", "values": ["dry", "sticky", "creamy", "watery", "eggwhite"], "sources": ["manual"] }
+  ],
+  "products": [ { "productId": "premium_monthly", "entitlement": "premium" } ]
+}

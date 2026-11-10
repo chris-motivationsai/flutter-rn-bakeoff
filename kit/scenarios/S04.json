@@ -1,0 +1,170 @@
+{
+ "id": "S04",
+ "title": "Strip levels in Polly: yes or no, never a number",
+ "pack": "polly",
+ "user": "u-4821",
+ "steps": [
+  {
+   "do": "scan_strip",
+   "at": "2026-11-03T14:00:00Z",
+   "type": "lh",
+   "image": "fixtures/strips/strip-004.pgm"
+  },
+  {
+   "do": "scan_strip",
+   "at": "2026-11-04T14:00:00Z",
+   "type": "lh",
+   "image": "fixtures/strips/strip-005.pgm"
+  },
+  {
+   "do": "scan_strip",
+   "at": "2026-11-05T14:00:00Z",
+   "type": "lh",
+   "image": "fixtures/strips/strip-006.pgm"
+  },
+  {
+   "do": "scan_strip",
+   "at": "2026-11-06T14:00:00Z",
+   "type": "lh",
+   "image": "fixtures/strips/strip-007.pgm"
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-06T14:05:00Z"
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-06T14:06:00Z",
+   "name": "end"
+  }
+ ],
+ "expect": {
+  "steps": [
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   }
+  ],
+  "snapshots": {
+   "end": {
+    "pack": "polly",
+    "observations": [
+     {
+      "type": "lh",
+      "observedAt": "2026-11-03T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "negative",
+       "ratio": null,
+       "locked": false
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-04T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "negative",
+       "ratio": null,
+       "locked": false
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-05T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "positive",
+       "ratio": null,
+       "locked": false
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-06T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "positive",
+       "ratio": null,
+       "locked": false
+      }
+     }
+    ],
+    "pendingMutations": 0,
+    "conflicts": [],
+    "entitlements": [],
+    "purchaseState": "idle",
+    "lastPurchaseError": null,
+    "storeFinished": []
+   }
+  },
+  "server": {
+   "observations": [
+    {
+     "type": "lh",
+     "observedAt": "2026-11-03T14:00:00Z",
+     "value": {
+      "ratio": 0.24
+     },
+     "source": "strip_reader",
+     "reader": {
+      "engineVersion": "bakeoff-1.0.0"
+     }
+    },
+    {
+     "type": "lh",
+     "observedAt": "2026-11-04T14:00:00Z",
+     "value": {
+      "ratio": 0.632
+     },
+     "source": "strip_reader",
+     "reader": {
+      "engineVersion": "bakeoff-1.0.0"
+     }
+    },
+    {
+     "type": "lh",
+     "observedAt": "2026-11-05T14:00:00Z",
+     "value": {
+      "ratio": 0.942
+     },
+     "source": "strip_reader",
+     "reader": {
+      "engineVersion": "bakeoff-1.0.0"
+     }
+    },
+    {
+     "type": "lh",
+     "observedAt": "2026-11-06T14:00:00Z",
+     "value": {
+      "ratio": 1.344
+     },
+     "source": "strip_reader",
+     "reader": {
+      "engineVersion": "bakeoff-1.0.0"
+     }
+    }
+   ],
+   "deleted": [],
+   "events": 4
+  }
+ }
+}

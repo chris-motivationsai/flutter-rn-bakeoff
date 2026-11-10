@@ -1,0 +1,218 @@
+{
+ "id": "S23",
+ "title": "Analytics crosses the gate without health data, and only when online",
+ "pack": "premom",
+ "user": "u-6410",
+ "steps": [
+  {
+   "do": "log_manual",
+   "at": "2026-11-03T08:00:00Z",
+   "type": "flow",
+   "value": {
+    "code": "medium"
+   }
+  },
+  {
+   "do": "thermometer_session",
+   "at": "2026-11-03T06:30:00Z",
+   "type": "bbt",
+   "script": "fixtures/ble/session-013.json"
+  },
+  {
+   "do": "scan_strip",
+   "at": "2026-11-03T14:00:00Z",
+   "type": "lh",
+   "image": "fixtures/strips/strip-022.pgm"
+  },
+  {
+   "do": "scan_strip",
+   "at": "2026-11-03T14:01:00Z",
+   "type": "lh",
+   "image": "fixtures/strips/strip-023.pgm"
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-03T14:02:00Z",
+   "type": "bbt",
+   "value": {
+    "celsius": 50
+   }
+  },
+  {
+   "do": "server_control",
+   "at": "2026-11-03T15:00:00Z",
+   "body": {
+    "mode": "down"
+   }
+  },
+  {
+   "do": "log_manual",
+   "at": "2026-11-03T20:00:00Z",
+   "type": "mucus",
+   "value": {
+    "code": "sticky"
+   }
+  },
+  {
+   "do": "server_control",
+   "at": "2026-11-03T21:00:00Z",
+   "body": {
+    "mode": "ok"
+   }
+  },
+  {
+   "do": "edit",
+   "at": "2026-11-03T21:01:00Z",
+   "target": {
+    "type": "flow",
+    "observedAt": "2026-11-03T08:00:00Z"
+   },
+   "value": {
+    "code": "spotting"
+   }
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-03T21:02:00Z"
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-03T21:03:00Z",
+   "name": "end"
+  }
+ ],
+ "expect": {
+  "steps": [
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": false,
+    "error": "strip_too_dark"
+   },
+   {
+    "ok": false,
+    "error": "invalid_value"
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   }
+  ],
+  "snapshots": {
+   "end": {
+    "pack": "premom",
+    "observations": [
+     {
+      "type": "bbt",
+      "observedAt": "2026-11-03T06:30:00Z",
+      "source": "thermometer",
+      "sync": "synced",
+      "display": {
+       "celsius": 36.45
+      }
+     },
+     {
+      "type": "flow",
+      "observedAt": "2026-11-03T08:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "spotting"
+      }
+     },
+     {
+      "type": "lh",
+      "observedAt": "2026-11-03T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "high",
+       "ratio": null,
+       "locked": true
+      }
+     },
+     {
+      "type": "mucus",
+      "observedAt": "2026-11-03T20:00:00Z",
+      "source": "manual",
+      "sync": "synced",
+      "display": {
+       "code": "sticky"
+      }
+     }
+    ],
+    "pendingMutations": 0,
+    "conflicts": [],
+    "entitlements": [],
+    "purchaseState": "idle",
+    "lastPurchaseError": null,
+    "storeFinished": []
+   }
+  },
+  "server": {
+   "observations": [
+    {
+     "type": "bbt",
+     "observedAt": "2026-11-03T06:30:00Z",
+     "value": {
+      "celsius": 36.45
+     },
+     "source": "thermometer",
+     "reader": {
+      "deviceModel": "EasyHome-EBT-100"
+     }
+    },
+    {
+     "type": "flow",
+     "observedAt": "2026-11-03T08:00:00Z",
+     "value": {
+      "code": "spotting"
+     },
+     "source": "manual"
+    },
+    {
+     "type": "lh",
+     "observedAt": "2026-11-03T14:00:00Z",
+     "value": {
+      "ratio": 0.628
+     },
+     "source": "strip_reader",
+     "reader": {
+      "engineVersion": "bakeoff-1.0.0"
+     }
+    },
+    {
+     "type": "mucus",
+     "observedAt": "2026-11-03T20:00:00Z",
+     "value": {
+      "code": "sticky"
+     },
+     "source": "manual"
+    }
+   ],
+   "deleted": [],
+   "events": 3
+  }
+ }
+}

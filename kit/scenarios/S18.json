@@ -1,0 +1,191 @@
+{
+ "id": "S18",
+ "title": "Purchase while the server is unreachable: receipt is held, survives restart, verified on next sync",
+ "pack": "premom",
+ "user": "u-2647",
+ "steps": [
+  {
+   "do": "scan_strip",
+   "at": "2026-11-03T14:00:00Z",
+   "type": "lh",
+   "image": "fixtures/strips/strip-017.pgm"
+  },
+  {
+   "do": "server_control",
+   "at": "2026-11-03T14:01:00Z",
+   "body": {
+    "mode": "http503"
+   }
+  },
+  {
+   "do": "purchase",
+   "at": "2026-11-03T14:02:00Z",
+   "productId": "premium_monthly",
+   "store": [
+    {
+     "event": "purchased",
+     "txId": "tx-4ba3f20c",
+     "receipt": "eyJ0eElkIjoidHgtNGJhM2YyMGMiLCJ1c2VySWQiOiJ1LTI2NDciLCJwcm9kdWN0SWQiOiJwcmVtaXVtX21vbnRobHkiLCJlbnRpdGxlbWVudCI6InByZW1pdW0iLCJleHBpcmVzQXQiOiIyMDI2LTEyLTAzVDE0OjAyOjAwWiJ9.4b7037df6d6afbcb88e34639e2673474cf93739c980057b2d692d19e78c39f5c"
+    }
+   ]
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-03T14:03:00Z",
+   "name": "verifying"
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-03T14:04:00Z"
+  },
+  {
+   "do": "restart",
+   "at": "2026-11-03T14:05:00Z"
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-03T14:06:00Z",
+   "name": "after_restart"
+  },
+  {
+   "do": "server_control",
+   "at": "2026-11-03T15:00:00Z",
+   "body": {
+    "mode": "ok"
+   }
+  },
+  {
+   "do": "sync",
+   "at": "2026-11-03T15:01:00Z"
+  },
+  {
+   "do": "snapshot",
+   "at": "2026-11-03T15:02:00Z",
+   "name": "end"
+  }
+ ],
+ "expect": {
+  "steps": [
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": false,
+    "error": "network"
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   },
+   {
+    "ok": true
+   }
+  ],
+  "snapshots": {
+   "verifying": {
+    "pack": "premom",
+    "observations": [
+     {
+      "type": "lh",
+      "observedAt": "2026-11-03T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "pending",
+      "display": {
+       "level": "high",
+       "ratio": null,
+       "locked": true
+      }
+     }
+    ],
+    "pendingMutations": 1,
+    "conflicts": [],
+    "entitlements": [],
+    "purchaseState": "verifying",
+    "lastPurchaseError": null,
+    "storeFinished": []
+   },
+   "after_restart": {
+    "pack": "premom",
+    "observations": [
+     {
+      "type": "lh",
+      "observedAt": "2026-11-03T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "pending",
+      "display": {
+       "level": "high",
+       "ratio": null,
+       "locked": true
+      }
+     }
+    ],
+    "pendingMutations": 1,
+    "conflicts": [],
+    "entitlements": [],
+    "purchaseState": "verifying",
+    "lastPurchaseError": null,
+    "storeFinished": []
+   },
+   "end": {
+    "pack": "premom",
+    "observations": [
+     {
+      "type": "lh",
+      "observedAt": "2026-11-03T14:00:00Z",
+      "source": "strip_reader",
+      "sync": "synced",
+      "display": {
+       "level": "high",
+       "ratio": 0.649,
+       "locked": false
+      }
+     }
+    ],
+    "pendingMutations": 0,
+    "conflicts": [],
+    "entitlements": [
+     "premium"
+    ],
+    "purchaseState": "idle",
+    "lastPurchaseError": null,
+    "storeFinished": [
+     "tx-4ba3f20c"
+    ]
+   }
+  },
+  "server": {
+   "observations": [
+    {
+     "type": "lh",
+     "observedAt": "2026-11-03T14:00:00Z",
+     "value": {
+      "ratio": 0.649
+     },
+     "source": "strip_reader",
+     "reader": {
+      "engineVersion": "bakeoff-1.0.0"
+     }
+    }
+   ],
+   "deleted": [],
+   "events": 1
+  }
+ }
+}

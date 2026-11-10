@@ -1,0 +1,10 @@
+{
+  "platforms": ["apple", "android"],
+  "apple": {
+    "modules": ["StripEngineModule"],
+    "podspecPath": ["ios/StripEngine.podspec"]
+  },
+  "android": {
+    "modules": ["expo.modules.stripengine.StripEngineModule"]
+  }
+}
