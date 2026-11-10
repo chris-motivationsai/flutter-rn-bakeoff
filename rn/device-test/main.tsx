@@ -1,4 +1,5 @@
-// On-device test entry (Android emulator). Selected by EXPO_PUBLIC_DEVICE_TEST=1 in index.ts.
+// On-device test entry (Android emulator, iOS simulator). Selected by EXPO_PUBLIC_DEVICE_TEST=1 in index.ts.
+// EXPO_PUBLIC_DEVICE_TEST_HOST is where device-test/host.ts listens, as seen from the device (default: Android emulator).
 // It runs, inside the real app process (Hermes + the real native modules):
 //   1. the native C++ strip engine on every fixture the host sends, and
 //   2. the kit's public scenarios through the same AppCore the screens use, with the real expo-sqlite

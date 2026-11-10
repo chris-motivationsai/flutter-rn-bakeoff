@@ -1,0 +1,122 @@
+# iOS round, React Native (Expo) build: build Premom and Polly for the iOS Simulator from the same code and
+# run the on-device test (rn/device-test) in each. See rn/IOS-REPORT.md.
+name: ios-rn
+
+on:
+  push:
+    branches: [ios-rn]
+    paths-ignore: ['**.md']
+  workflow_dispatch:
+
+concurrency:
+  group: ios-rn-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  ios:
+    name: ${{ matrix.pack }}
+    runs-on: macos-26
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        pack: [premom, polly]
+    env:
+      APP_PACK: ${{ matrix.pack }}
+      CI: '1'
+      OUT: ${{ github.workspace }}/out
+      DERIVED_DATA: /Users/runner/ios-rn-derived-data
+    defaults:
+      run:
+        working-directory: rn
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 26
+
+      - name: Environment and simulator
+        run: |
+          mkdir -p "$OUT"
+          {
+            echo "runner image: $ImageOS $ImageVersion"; sw_vers; uname -m
+            xcodebuild -version; xcrun --sdk iphonesimulator --show-sdk-version
+            echo "node $(node -v)  npm $(npm -v)  pod $(pod --version)  ruby $(ruby -e 'print RUBY_VERSION')"
+            sysctl -n hw.ncpu hw.memsize
+          } | tee "$OUT/environment.txt"
+          xcrun simctl list devices available -j > "$OUT/simulators.json"
+          # The newest installed iOS runtime that has an "iPhone 17".
+          node -e '
+            const devices = JSON.parse(require("fs").readFileSync(process.argv[1], "utf8")).devices;
+            const version = (k) => k.split("iOS-")[1].split("-").map(Number);
+            const runtimes = Object.keys(devices).filter((k) => /SimRuntime\.iOS-/.test(k) && devices[k].some((d) => d.name === "iPhone 17"))
+              .sort((a, b) => version(a)[0] - version(b)[0] || (version(a)[1] ?? 0) - (version(b)[1] ?? 0));
+            const runtime = runtimes.pop();
+            const device = devices[runtime].find((d) => d.name === "iPhone 17");
+            console.log(`SIM_UDID=${device.udid}\nSIM_DESCRIPTION=${device.name}, ${runtime.split("SimRuntime.")[1]}`);
+          ' "$OUT/simulators.json" | tee -a "$GITHUB_ENV" "$OUT/environment.txt"
+
+      - name: Boot the simulator (in the background)
+        run: xcrun simctl boot "$SIM_UDID"
+
+      # node_modules, the generated ios/ project with its Pods, and Xcode's build products, restored together
+      # so that file times stay consistent and xcodebuild can build incrementally.
+      - name: Restore build cache
+        id: cache
+        uses: actions/cache/restore@v6
+        with:
+          path: |
+            rn/node_modules
+            rn/ios
+            rn/modules/strip-engine/ios/cpp
+            ${{ env.DERIVED_DATA }}
+          key: ios-rn-v1-${{ matrix.pack }}-${{ hashFiles('rn/package-lock.json', 'rn/app.config.ts', 'rn/modules/strip-engine/**', 'kit/packs/**', 'kit/engine/strip_engine.*') }}
+
+      - name: npm ci
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm ci
+
+      - name: Kit dependencies, host strip_cli
+        run: |
+          (cd ../kit && npm ci)
+          ../kit/engine/build.sh
+
+      - name: expo prebuild (generates ios/, runs pod install)
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npx expo prebuild --platform ios --clean
+
+      - name: Build for the simulator
+        run: ./device-test/ios/build.sh "$SIM_UDID" "$DERIVED_DATA" "$OUT"
+
+      - name: Save build cache
+        if: steps.cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v6
+        with:
+          path: |
+            rn/node_modules
+            rn/ios
+            rn/modules/strip-engine/ios/cpp
+            ${{ env.DERIVED_DATA }}
+          key: ${{ steps.cache.outputs.cache-primary-key }}
+
+      - name: On-device test and app start
+        run: |
+          APP="$(sed -n 's/^app=//p' "$OUT/app.txt")"
+          STATUS=0
+          ./device-test/ios/run.sh "$SIM_UDID" "$APP" "$OUT" || STATUS=$?
+          { echo "### $APP_PACK on $SIM_DESCRIPTION"; cat "$OUT/summary.md"; } >> "$GITHUB_STEP_SUMMARY" || true
+          exit $STATUS
+
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: ios-rn-${{ matrix.pack }}
+          path: |
+            out
+            rn/ios/Podfile.lock
+          if-no-files-found: warn

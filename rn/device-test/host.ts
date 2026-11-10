@@ -1,5 +1,5 @@
 // Host side of the on-device test. Usage: node device-test/host.ts <kitServerPort> <outFile> [engine-only | S01 S02 ...]
-// Serves the job (fixtures + public scenarios, files inlined) to the app on the emulator, receives its
+// Serves the job (fixtures + public scenarios, files inlined) to the app on the emulator/simulator, receives its
 // results, and compares: engine results with kit/engine/build/strip_cli, scenario outputs and the kit
 // server's state with each scenario's `expect` (same checks as kit/judge/judge.ts, whose diff() is copied
 // here because judge.ts cannot be imported without running it).
@@ -38,7 +38,9 @@ const key = (o: any) => `${o.type}|${o.observedAt}`;
 
 function job() {
   return {
-    serverUrl: `http://10.0.2.2:${kitPort}`,
+    // The kit server as the app reaches it: 10.0.2.2 is the Mac from an Android emulator. An iOS simulator
+    // shares the Mac's network, so the iOS run sets DEVICE_TEST_SERVER_URL=http://127.0.0.1:<port>.
+    serverUrl: process.env.DEVICE_TEST_SERVER_URL ?? `http://10.0.2.2:${kitPort}`,
     fixtures: fixtureNames.map((name) => ({ name, base64: readFileSync(join(stripDir, name)).toString('base64') })),
     scenarios: [...scenarios].map(([id, sc]) => ({
       id,
@@ -89,7 +91,10 @@ async function judgeScenario(body: any) {
   check(state.oversize ? `sent ${state.oversize} oversize push request(s)` : null);
   check(state.rejected.length ? `server rejected ${state.rejected.length} mutation(s): ${[...new Set(state.rejected)].join(', ')}` : null);
   const pass = fails.length === 0;
-  report.scenarios.push({ id: body.id, title: sc.title, pack: sc.pack, pass, checks, fails, pushRequests: state.pushRequests });
+  // A failing scenario keeps what the device reported, for diagnosis. The report is rewritten after every
+  // scenario so a run that never finishes still leaves its results.
+  report.scenarios.push({ id: body.id, title: sc.title, pack: sc.pack, pass, checks, fails, pushRequests: state.pushRequests, ...(pass ? {} : { deviceOutput: res ?? body.error }) });
+  writeFileSync(outFile, JSON.stringify(report, null, 1));
   console.log(`${pass ? 'PASS' : 'FAIL'} ${body.id} ${sc.title} (${checks - Math.min(fails.length, checks)}/${checks} checks, ${state.pushRequests} push requests)`);
   for (const f of fails.slice(0, 4)) console.log(`     - ${f}`);
 }
