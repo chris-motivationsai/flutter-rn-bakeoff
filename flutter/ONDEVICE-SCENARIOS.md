@@ -107,4 +107,4 @@ The second pass also printed the other syncs that returned `network` in S24 to S
 
 ## Cleanup
 
-The emulator (`emulator-5560`), the kit server (port 18942) and the fixture server (port 18941) that I started are shut down. `flutter test` uninstalled the app when it finished. The AVD `fa35` is still defined. Full log of the run: `/private/tmp/claude-501/-Users-chrislema-projects-premom-product-family-platform/d44438a5-f41a-4296-875e-09d54b641ae3/scratchpad/ods/run1.log` (temporary).
+The emulator (`emulator-5560`), the kit server (port 18942) and the fixture server (port 18941) that I started are shut down. `flutter test` uninstalled the app when it finished. The AVD `fa35` is still defined.
