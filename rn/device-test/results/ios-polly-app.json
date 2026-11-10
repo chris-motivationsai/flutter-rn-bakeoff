@@ -1,0 +1,1847 @@
+{
+ "engine": {
+  "deviceVersion": "bakeoff-1.0.0",
+  "fixtures": 106,
+  "statusEqual": 106,
+  "bitIdentical": 106,
+  "maxAbsDiff": 0,
+  "rows": [
+   {
+    "name": "strip-001.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.23427169528878525
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.23427169528878525
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 5
+   },
+   {
+    "name": "strip-002.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.6740076932831719
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.6740076932831719
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-003.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 1.1312324187696192
+    },
+    "host": {
+     "status": 0,
+     "ratio": 1.1312324187696192
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-004.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.2403579719913128
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.2403579719913128
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-005.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.6323912166868284
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.6323912166868284
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 1
+   },
+   {
+    "name": "strip-006.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.9416308689426484
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.9416308689426484
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-007.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 1.344035480080361
+    },
+    "host": {
+     "status": 0,
+     "ratio": 1.344035480080361
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-008.pgm",
+    "device": {
+     "status": 1,
+     "ratio": 0
+    },
+    "host": {
+     "status": 1,
+     "ratio": 0
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 1
+   },
+   {
+    "name": "strip-009.pgm",
+    "device": {
+     "status": 2,
+     "ratio": 0
+    },
+    "host": {
+     "status": 2,
+     "ratio": 0
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-010.pgm",
+    "device": {
+     "status": 3,
+     "ratio": 0
+    },
+    "host": {
+     "status": 3,
+     "ratio": 0
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 1
+   },
+   {
+    "name": "strip-011.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.6156072623388338
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.6156072623388338
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-012.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.6038610366968574
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.6038610366968574
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-013.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.608451825319295
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.608451825319295
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 1
+   },
+   {
+    "name": "strip-014.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.6892727738535301
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.6892727738535301
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-015.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 1.2964068234060568
+    },
+    "host": {
+     "status": 0,
+     "ratio": 1.2964068234060568
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-016.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.6150606546120392
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.6150606546120392
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 1
+   },
+   {
+    "name": "strip-017.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.6494228702275808
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.6494228702275808
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-018.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 1.2427443526573583
+    },
+    "host": {
+     "status": 0,
+     "ratio": 1.2427443526573583
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-019.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.6208512299882857
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.6208512299882857
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-020.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 1.332044384667115
+    },
+    "host": {
+     "status": 0,
+     "ratio": 1.332044384667115
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-021.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.6969668557498478
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.6969668557498478
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-022.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.6279618350174277
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.6279618350174277
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-023.pgm",
+    "device": {
+     "status": 2,
+     "ratio": 0
+    },
+    "host": {
+     "status": 2,
+     "ratio": 0
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-024.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.17340140488087466
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.17340140488087466
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-025.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.3276629752254822
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.3276629752254822
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-026.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.2727709685171835
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.2727709685171835
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 1
+   },
+   {
+    "name": "strip-027.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.16793180950765435
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.16793180950765435
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-028.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.5990400516274754
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.5990400516274754
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 1
+   },
+   {
+    "name": "strip-029.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 1.0999741764119975
+    },
+    "host": {
+     "status": 0,
+     "ratio": 1.0999741764119975
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-030.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.6995569125367685
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.6995569125367685
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-031.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.24942234172163164
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.24942234172163164
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-032.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.1335329341317365
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.1335329341317365
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-033.pgm",
+    "device": {
+     "status": 3,
+     "ratio": 0
+    },
+    "host": {
+     "status": 3,
+     "ratio": 0
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-034.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.37346566740935777
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.37346566740935777
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 1
+   },
+   {
+    "name": "strip-035.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.1959595959595959
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.1959595959595959
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-036.pgm",
+    "device": {
+     "status": 1,
+     "ratio": 0
+    },
+    "host": {
+     "status": 1,
+     "ratio": 0
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-037.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.3772988776761294
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.3772988776761294
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-038.pgm",
+    "device": {
+     "status": 2,
+     "ratio": 0
+    },
+    "host": {
+     "status": 2,
+     "ratio": 0
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-039.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.2760596968997615
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.2760596968997615
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-040.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.2645292031555328
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.2645292031555328
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-041.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.1054114032092863
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.1054114032092863
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 1
+   },
+   {
+    "name": "strip-042.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.18055182470547596
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.18055182470547596
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-043.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.3219617716940318
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.3219617716940318
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-044.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.2153532053899551
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.2153532053899551
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-045.pgm",
+    "device": {
+     "status": 2,
+     "ratio": 0
+    },
+    "host": {
+     "status": 2,
+     "ratio": 0
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-046.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.36766645394596886
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.36766645394596886
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 1
+   },
+   {
+    "name": "strip-047.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.3327546296296297
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.3327546296296297
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-048.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.30615774907749094
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.30615774907749094
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-049.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.19037442678420338
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.19037442678420338
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-050.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.3331661956422642
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.3331661956422642
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 1
+   },
+   {
+    "name": "strip-051.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.22358986615678758
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.22358986615678758
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-052.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.22299057027391106
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.22299057027391106
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-053.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.22590467784642546
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.22590467784642546
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-054.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.369832132361821
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.369832132361821
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-055.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.3969355439642327
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.3969355439642327
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-056.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.2462603991639687
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.2462603991639687
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-057.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.647585558326859
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.647585558326859
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-058.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 1.4800206460492922
+    },
+    "host": {
+     "status": 0,
+     "ratio": 1.4800206460492922
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 1
+   },
+   {
+    "name": "strip-059.pgm",
+    "device": {
+     "status": 1,
+     "ratio": 0
+    },
+    "host": {
+     "status": 1,
+     "ratio": 0
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-060.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.6019417475728153
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.6019417475728153
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-061.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.13577313661620977
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.13577313661620977
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-062.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.38330231892356137
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.38330231892356137
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-063.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.2244176372712145
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.2244176372712145
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 1
+   },
+   {
+    "name": "strip-064.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.19152946196792414
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.19152946196792414
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-065.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.13031343924431085
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.13031343924431085
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 1
+   },
+   {
+    "name": "strip-066.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.3711239933081739
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.3711239933081739
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-067.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.6986475379212431
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.6986475379212431
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-068.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 1.4253163416940602
+    },
+    "host": {
+     "status": 0,
+     "ratio": 1.4253163416940602
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-069.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.7019189599470631
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.7019189599470631
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-070.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.28216116292748494
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.28216116292748494
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-071.pgm",
+    "device": {
+     "status": 1,
+     "ratio": 0
+    },
+    "host": {
+     "status": 1,
+     "ratio": 0
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-072.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.3393528005464481
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.3393528005464481
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-073.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.10927886828778302
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.10927886828778302
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-074.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.6710910042623194
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.6710910042623194
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-075.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 1.377990055984027
+    },
+    "host": {
+     "status": 0,
+     "ratio": 1.377990055984027
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-076.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.661553651398145
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.661553651398145
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-077.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.1285245610923922
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.1285245610923922
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-078.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.21586064076014128
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.21586064076014128
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-079.pgm",
+    "device": {
+     "status": 3,
+     "ratio": 0
+    },
+    "host": {
+     "status": 3,
+     "ratio": 0
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-080.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.19360585036564779
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.19360585036564779
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-081.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.6003727171077151
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.6003727171077151
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-082.pgm",
+    "device": {
+     "status": 1,
+     "ratio": 0
+    },
+    "host": {
+     "status": 1,
+     "ratio": 0
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-083.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 1.4346774854520128
+    },
+    "host": {
+     "status": 0,
+     "ratio": 1.4346774854520128
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-084.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.6995281559405938
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.6995281559405938
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-085.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.15634617178028554
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.15634617178028554
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-086.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.22506982713067109
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.22506982713067109
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-087.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.16770350761085379
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.16770350761085379
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-088.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.10516021639617118
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.10516021639617118
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 1
+   },
+   {
+    "name": "strip-089.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.391169441066711
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.391169441066711
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-090.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.3261991826199184
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.3261991826199184
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-091.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.321153378213967
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.321153378213967
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-092.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.2826610959344367
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.2826610959344367
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-093.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.3171756794620342
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.3171756794620342
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-094.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.24834530347838327
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.24834530347838327
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-095.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.1452042446839021
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.1452042446839021
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-096.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.2965444287729196
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.2965444287729196
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-097.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.36487298317885336
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.36487298317885336
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-098.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.33404412367751996
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.33404412367751996
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-099.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.2266576454668469
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.2266576454668469
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-100.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.17280068605731427
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.17280068605731427
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-101.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.2801409691629957
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.2801409691629957
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-102.pgm",
+    "device": {
+     "status": 2,
+     "ratio": 0
+    },
+    "host": {
+     "status": 2,
+     "ratio": 0
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-103.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.30244783306581075
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.30244783306581075
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   },
+   {
+    "name": "strip-104.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.2780033216460603
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.2780033216460603
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 1
+   },
+   {
+    "name": "strip-105.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.25221481771854176
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.25221481771854176
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 1
+   },
+   {
+    "name": "strip-106.pgm",
+    "device": {
+     "status": 0,
+     "ratio": 0.20073751891074115
+    },
+    "host": {
+     "status": 0,
+     "ratio": 0.20073751891074115
+    },
+    "statusEqual": true,
+    "bitIdentical": true,
+    "absDiff": 0,
+    "ms": 0
+   }
+  ]
+ },
+ "scenarios": [
+  {
+   "id": "S01",
+   "title": "Manual logs online (Premom)",
+   "pack": "premom",
+   "pass": true,
+   "checks": 14,
+   "fails": [],
+   "pushRequests": 1
+  },
+  {
+   "id": "S02",
+   "title": "Catalog comes from the pack: Polly rejects what it does not have",
+   "pack": "polly",
+   "pass": true,
+   "checks": 15,
+   "fails": [],
+   "pushRequests": 1
+  },
+  {
+   "id": "S03",
+   "title": "Strip levels in Premom without premium: numeric result is locked",
+   "pack": "premom",
+   "pass": true,
+   "checks": 12,
+   "fails": [],
+   "pushRequests": 1
+  },
+  {
+   "id": "S04",
+   "title": "Strip levels in Polly: yes or no, never a number",
+   "pack": "polly",
+   "pass": true,
+   "checks": 13,
+   "fails": [],
+   "pushRequests": 1
+  },
+  {
+   "id": "S05",
+   "title": "A failed strip read is an error, never a low result",
+   "pack": "premom",
+   "pass": true,
+   "checks": 15,
+   "fails": [],
+   "pushRequests": 1
+  },
+  {
+   "id": "S06",
+   "title": "Thermometer: final reading only, Fahrenheit converted, device timestamp honoured",
+   "pack": "polly",
+   "pass": true,
+   "checks": 13,
+   "fails": [],
+   "pushRequests": 1
+  },
+  {
+   "id": "S07",
+   "title": "Thermometer failures create nothing",
+   "pack": "premom",
+   "pass": true,
+   "checks": 17,
+   "fails": [],
+   "pushRequests": 1
+  },
+  {
+   "id": "S08",
+   "title": "Offline logging survives a restart and syncs later",
+   "pack": "premom",
+   "pass": true,
+   "checks": 21,
+   "fails": [],
+   "pushRequests": 1
+  },
+  {
+   "id": "S09",
+   "title": "A push that the server applied but never answered must not duplicate or conflict",
+   "pack": "polly",
+   "pass": true,
+   "checks": 15,
+   "fails": [],
+   "pushRequests": 2
+  },
+  {
+   "id": "S10",
+   "title": "Large offline backlog is pushed in chunks of at most 20",
+   "pack": "premom",
+   "pass": true,
+   "checks": 58,
+   "fails": [],
+   "pushRequests": 4
+  },
+  {
+   "id": "S11",
+   "title": "Edit and delete; reader results are read-only",
+   "pack": "premom",
+   "pass": true,
+   "checks": 24,
+   "fails": [],
+   "pushRequests": 2
+  },
+  {
+   "id": "S12",
+   "title": "One pending change per observation: edits coalesce, create+delete sends nothing",
+   "pack": "premom",
+   "pass": true,
+   "checks": 18,
+   "fails": [],
+   "pushRequests": 1
+  },
+  {
+   "id": "S13",
+   "title": "Conflict: another device edited first, the server copy wins and the loss is recorded",
+   "pack": "premom",
+   "pass": true,
+   "checks": 19,
+   "fails": [],
+   "pushRequests": 2
+  },
+  {
+   "id": "S14",
+   "title": "Conflict with a remote delete, and a local delete that loses to a remote edit",
+   "pack": "premom",
+   "pass": true,
+   "checks": 18,
+   "fails": [],
+   "pushRequests": 2
+  },
+  {
+   "id": "S15",
+   "title": "Pull: changes from another app in the family arrive; types this pack lacks stay hidden but are kept",
+   "pack": "polly",
+   "pass": true,
+   "checks": 21,
+   "fails": [],
+   "pushRequests": 1
+  },
+  {
+   "id": "S16",
+   "title": "Purchase unlocks the numeric LH result only after the server verifies",
+   "pack": "premom",
+   "pass": true,
+   "checks": 17,
+   "fails": [],
+   "pushRequests": 1
+  },
+  {
+   "id": "S17",
+   "title": "Purchases that do not complete: cancelled, store error, pending",
+   "pack": "premom",
+   "pass": true,
+   "checks": 19,
+   "fails": [],
+   "pushRequests": 0
+  },
+  {
+   "id": "S18",
+   "title": "Purchase while the server is unreachable: receipt is held, survives restart, verified on next sync",
+   "pack": "premom",
+   "pass": true,
+   "checks": 19,
+   "fails": [],
+   "pushRequests": 1
+  },
+  {
+   "id": "S19",
+   "title": "Receipts the server refuses never unlock anything",
+   "pack": "premom",
+   "pass": true,
+   "checks": 19,
+   "fails": [],
+   "pushRequests": 1
+  },
+  {
+   "id": "S20",
+   "title": "Entitlement expires on the clock and the number locks again",
+   "pack": "premom",
+   "pass": true,
+   "checks": 20,
+   "fails": [],
+   "pushRequests": 0
+  },
+  {
+   "id": "S21",
+   "title": "Polly sells nothing: purchase is not available and the store is never called",
+   "pack": "polly",
+   "pass": true,
+   "checks": 10,
+   "fails": [],
+   "pushRequests": 0
+  },
+  {
+   "id": "S22",
+   "title": "Restore purchases",
+   "pack": "premom",
+   "pass": true,
+   "checks": 19,
+   "fails": [],
+   "pushRequests": 1
+  },
+  {
+   "id": "S23",
+   "title": "Analytics crosses the gate without health data, and only when online",
+   "pack": "premom",
+   "pass": true,
+   "checks": 18,
+   "fails": [],
+   "pushRequests": 1
+  },
+  {
+   "id": "S24",
+   "title": "Persona: regular 28-day cycle",
+   "pack": "premom",
+   "pass": true,
+   "checks": 109,
+   "fails": [],
+   "pushRequests": 23
+  },
+  {
+   "id": "S25",
+   "title": "Persona: long 36-day cycle",
+   "pack": "polly",
+   "pass": true,
+   "checks": 118,
+   "fails": [],
+   "pushRequests": 34
+  },
+  {
+   "id": "S26",
+   "title": "Persona: PCOS-like, several LH surges",
+   "pack": "premom",
+   "pass": true,
+   "checks": 124,
+   "fails": [],
+   "pushRequests": 30
+  },
+  {
+   "id": "S27",
+   "title": "Persona: anovulatory, no temperature shift",
+   "pack": "polly",
+   "pass": true,
+   "checks": 105,
+   "fails": [],
+   "pushRequests": 27
+  }
+ ],
+ "finished": {}
+}
