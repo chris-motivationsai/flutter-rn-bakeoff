@@ -146,9 +146,12 @@ jobs:
 
       - name: Milestone 3a - engine and storage/sync on the simulator (Premom)
         if: ${{ !cancelled() }}
+        timeout-minutes: 12
         working-directory: flutter
         run: |
           set -o pipefail
+          # The tool reads the bundle id before it builds; see ios/Flutter/pack_xcconfig.sh.
+          ios/Flutter/pack_xcconfig.sh premom
           start=$(date +%s)
           flutter test integration_test/device_test.dart -d "$UDID" \
             --dart-define=PACK=premom \
@@ -158,9 +161,11 @@ jobs:
 
       - name: Milestone 3b - 27 scenarios on the simulator
         if: ${{ !cancelled() }}
+        timeout-minutes: 12
         working-directory: flutter
         run: |
           set -o pipefail
+          ios/Flutter/pack_xcconfig.sh premom
           start=$(date +%s)
           flutter test integration_test/scenarios_device_test.dart -d "$UDID" \
             --dart-define=PACK=premom \
@@ -170,9 +175,12 @@ jobs:
 
       - name: Milestone 3a again with the Polly build
         if: ${{ !cancelled() }}
+        timeout-minutes: 12
         working-directory: flutter
         run: |
           set -o pipefail
+          # The tool reads the bundle id before it builds; see ios/Flutter/pack_xcconfig.sh.
+          ios/Flutter/pack_xcconfig.sh polly
           start=$(date +%s)
           flutter test integration_test/device_test.dart -d "$UDID" \
             --dart-define=PACK=polly \
@@ -182,6 +190,7 @@ jobs:
 
       - name: Install and launch both apps side by side
         if: ${{ !cancelled() }}
+        timeout-minutes: 5
         run: |
           for pack in premom polly; do
             app="$RUNNER_TEMP/$(echo "$pack" | awk '{print toupper(substr($0,1,1)) substr($0,2)}').app"
@@ -194,7 +203,7 @@ jobs:
           xcrun simctl listapps "$UDID" | grep -A12 '"com.bakeoff' | grep -E 'CFBundleIdentifier|CFBundleDisplayName' | tee "$RESULTS/installed-apps.txt" || true
 
       - name: Summary
-        if: ${{ !cancelled() }}
+        if: ${{ always() }}
         run: |
           {
             echo '### ios-flutter'
@@ -208,7 +217,7 @@ jobs:
           } | tee "$RESULTS/summary.txt" >> "$GITHUB_STEP_SUMMARY"
 
       - uses: actions/upload-artifact@v7
-        if: ${{ !cancelled() }}
+        if: ${{ always() }}
         with:
           name: ios-flutter-results
           path: ${{ runner.temp }}/results
