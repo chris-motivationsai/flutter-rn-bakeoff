@@ -1,0 +1,215 @@
+# iOS round, Flutter build: simulator builds of both apps, then the engine comparison and the
+# 27 public scenarios inside the app on an iOS Simulator. No code signing is needed.
+name: ios-flutter
+
+on:
+  push:
+    branches: [ios-flutter]
+    paths:
+      - 'flutter/**'
+      - '!flutter/**/*.md'
+      - 'kit/**'
+      - '.github/workflows/ios-flutter.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: ios-flutter
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  FIXTURE_PORT: 18931
+  API_PORT: 18932
+  SCENARIO_PORT: 18941
+
+jobs:
+  simulator:
+    runs-on: macos-26
+    timeout-minutes: 45
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Runner facts
+        run: |
+          mkdir -p "$RUNNER_TEMP/results"
+          echo "RESULTS=$RUNNER_TEMP/results" >> "$GITHUB_ENV"
+          {
+            echo "image=$ImageOS $ImageVersion"
+            sw_vers
+            uname -m
+            sysctl -n hw.ncpu hw.memsize
+            xcodebuild -version
+            xcrun simctl list runtimes
+            node --version
+            python3 --version
+            pod --version || true
+          } 2>&1 | tee "$RUNNER_TEMP/results/runner.txt"
+          # kit/ and rn/ must be exactly as first committed.
+          git diff --stat --exit-code "$(git rev-list --max-parents=0 HEAD)" -- kit rn
+
+      - name: Pick and boot a simulator
+        run: |
+          xcrun simctl list devices available -j > "$RESULTS/devices.json"
+          python3 - "$RESULTS/devices.json" > "$RESULTS/simulator.txt" <<'PY'
+          import json, re, sys
+          best = None
+          for runtime, devices in json.load(open(sys.argv[1]))["devices"].items():
+              m = re.search(r"SimRuntime\.iOS-(\d+)-(\d+)(?:-(\d+))?$", runtime)
+              if not m:
+                  continue
+              version = tuple(int(x or 0) for x in m.groups())
+              for d in devices:
+                  if not d["name"].startswith("iPhone"):
+                      continue
+                  rank = (version, d["name"] == "iPhone 17")
+                  if best is None or rank > best[0]:
+                      best = (rank, d["udid"], d["name"], ".".join(str(v) for v in version[:2]))
+          print(best[1]); print(best[2]); print("iOS " + best[3])
+          PY
+          cat "$RESULTS/simulator.txt"
+          UDID=$(sed -n 1p "$RESULTS/simulator.txt")
+          echo "UDID=$UDID" >> "$GITHUB_ENV"
+          xcrun simctl boot "$UDID"
+          xcrun simctl bootstatus "$UDID" -b | tail -3
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 3.47.9
+          channel: stable
+          cache: true
+          pub-cache: true
+
+      - name: flutter pub get
+        working-directory: flutter
+        run: |
+          flutter --version
+          flutter pub get
+
+      - name: Kit, host engine, expected results, servers
+        run: |
+          kit/engine/build.sh
+          (cd kit && npm ci)
+          mkdir -p "$RUNNER_TEMP/fixtures"
+          cp kit/scenarios/fixtures/strips/*.pgm "$RUNNER_TEMP/fixtures/"
+          for f in kit/scenarios/fixtures/strips/*.pgm; do
+            echo "$(basename "$f") $(kit/engine/build/strip_cli "$f")"
+          done > "$RUNNER_TEMP/fixtures/expected.txt"
+          cp "$RUNNER_TEMP/fixtures/expected.txt" "$RESULTS/host-strip_cli.txt"
+          echo "host strip_cli lines: $(wc -l < "$RESULTS/host-strip_cli.txt"); by status:"
+          awk '{print $2}' "$RESULTS/host-strip_cli.txt" | sort | uniq -c
+          nohup python3 -m http.server "$FIXTURE_PORT" --bind 127.0.0.1 --directory "$RUNNER_TEMP/fixtures" > "$RESULTS/fixture-server.log" 2>&1 &
+          nohup python3 -m http.server "$SCENARIO_PORT" --bind 127.0.0.1 --directory kit/scenarios > "$RESULTS/scenario-server.log" 2>&1 &
+          nohup kit/bin/start-server.sh "$API_PORT" > "$RESULTS/kit-server.log" 2>&1 &
+          for i in $(seq 1 30); do
+            if curl -sf "http://127.0.0.1:$FIXTURE_PORT/expected.txt" > /dev/null \
+              && curl -sf "http://127.0.0.1:$SCENARIO_PORT/S01.json" > /dev/null \
+              && curl -sf "http://127.0.0.1:$API_PORT/__control/state" > /dev/null; then
+              echo "servers up"; cat "$RESULTS/kit-server.log"; exit 0
+            fi
+            sleep 1
+          done
+          echo "servers did not come up"; cat "$RESULTS"/*-server.log; exit 1
+
+      - name: Milestone 1 - build Premom for the simulator
+        working-directory: flutter
+        run: |
+          set -o pipefail
+          start=$(date +%s)
+          flutter build ios --simulator --debug --dart-define=PACK=premom 2>&1 | tee "$RESULTS/build-premom.log"
+          echo "build_premom_first_seconds=$(( $(date +%s) - start ))" | tee -a "$RESULTS/timings.txt"
+          cp -R build/ios/iphonesimulator/Runner.app "$RUNNER_TEMP/Premom.app"
+
+      - name: Milestone 1 - inspect Premom.app
+        if: ${{ !cancelled() }}
+        run: flutter/tool/ios_inspect_app.sh "$RUNNER_TEMP/Premom.app" premom 2>&1 | tee "$RESULTS/app-premom.txt"
+
+      - name: Milestone 2 - build Polly from the same tree
+        if: ${{ !cancelled() }}
+        working-directory: flutter
+        run: |
+          set -o pipefail
+          start=$(date +%s)
+          flutter build ios --simulator --debug --dart-define=PACK=polly 2>&1 | tee "$RESULTS/build-polly.log"
+          echo "build_polly_after_premom_seconds=$(( $(date +%s) - start ))" | tee -a "$RESULTS/timings.txt"
+          cp -R build/ios/iphonesimulator/Runner.app "$RUNNER_TEMP/Polly.app"
+
+      - name: Milestone 2 - inspect Polly.app
+        if: ${{ !cancelled() }}
+        run: flutter/tool/ios_inspect_app.sh "$RUNNER_TEMP/Polly.app" polly 2>&1 | tee "$RESULTS/app-polly.txt"
+
+      - name: Milestone 3a - engine and storage/sync on the simulator (Premom)
+        if: ${{ !cancelled() }}
+        working-directory: flutter
+        run: |
+          set -o pipefail
+          start=$(date +%s)
+          flutter test integration_test/device_test.dart -d "$UDID" \
+            --dart-define=PACK=premom \
+            --dart-define=FIXTURE_URL=http://127.0.0.1:$FIXTURE_PORT \
+            --dart-define=API_URL=http://127.0.0.1:$API_PORT 2>&1 | tee "$RESULTS/device-test-premom.log"
+          echo "device_test_premom_seconds=$(( $(date +%s) - start ))" | tee -a "$RESULTS/timings.txt"
+
+      - name: Milestone 3b - 27 scenarios on the simulator
+        if: ${{ !cancelled() }}
+        working-directory: flutter
+        run: |
+          set -o pipefail
+          start=$(date +%s)
+          flutter test integration_test/scenarios_device_test.dart -d "$UDID" \
+            --dart-define=PACK=premom \
+            --dart-define=SCENARIO_URL=http://127.0.0.1:$SCENARIO_PORT \
+            --dart-define=API_URL=http://127.0.0.1:$API_PORT 2>&1 | tee "$RESULTS/scenarios-test.log"
+          echo "scenarios_test_seconds=$(( $(date +%s) - start ))" | tee -a "$RESULTS/timings.txt"
+
+      - name: Milestone 3a again with the Polly build
+        if: ${{ !cancelled() }}
+        working-directory: flutter
+        run: |
+          set -o pipefail
+          start=$(date +%s)
+          flutter test integration_test/device_test.dart -d "$UDID" \
+            --dart-define=PACK=polly \
+            --dart-define=FIXTURE_URL=http://127.0.0.1:$FIXTURE_PORT \
+            --dart-define=API_URL=http://127.0.0.1:$API_PORT 2>&1 | tee "$RESULTS/device-test-polly.log"
+          echo "device_test_polly_seconds=$(( $(date +%s) - start ))" | tee -a "$RESULTS/timings.txt"
+
+      - name: Install and launch both apps side by side
+        if: ${{ !cancelled() }}
+        run: |
+          for pack in premom polly; do
+            app="$RUNNER_TEMP/$(echo "$pack" | awk '{print toupper(substr($0,1,1)) substr($0,2)}').app"
+            xcrun simctl install "$UDID" "$app"
+            xcrun simctl launch "$UDID" "com.bakeoff.$pack"
+            sleep 20
+            xcrun simctl io "$UDID" screenshot "$RESULTS/launch-$pack.png"
+          done
+          xcrun simctl spawn "$UDID" launchctl list | grep -i bakeoff | tee "$RESULTS/running-apps.txt" || true
+          xcrun simctl listapps "$UDID" | grep -A12 '"com.bakeoff' | grep -E 'CFBundleIdentifier|CFBundleDisplayName' | tee "$RESULTS/installed-apps.txt" || true
+
+      - name: Summary
+        if: ${{ !cancelled() }}
+        run: |
+          {
+            echo '### ios-flutter'
+            echo '```'
+            cat "$RESULTS/simulator.txt" || true
+            cat "$RESULTS/timings.txt" || true
+            grep -hE '^(BUNDLE|ENGINE-LIB)' "$RESULTS"/app-*.txt || true
+            grep -hE 'DEVICE abi|ENGINE compared|SYNC db|ODS (PASS|FAIL|SUMMARY|PUSHCOUNT|device|  -)|All tests passed|Some tests failed' "$RESULTS"/device-test-*.log "$RESULTS/scenarios-test.log" || true
+            echo "kit server lines: $(wc -l < "$RESULTS/kit-server.log")"
+            echo '```'
+          } | tee "$RESULTS/summary.txt" >> "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/upload-artifact@v7
+        if: ${{ !cancelled() }}
+        with:
+          name: ios-flutter-results
+          path: ${{ runner.temp }}/results
+          if-no-files-found: warn
