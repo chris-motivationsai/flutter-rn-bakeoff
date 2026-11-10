@@ -20,10 +20,11 @@ wait_for() { # <seconds> <command...>: polls once a second until the command suc
   return 1
 }
 metro_running() { curl -sf http://127.0.0.1:8081/status | grep -q 'packager-status:running'; }
-start_metro() { # <log file>; the environment decides which root component the bundle has (index.ts)
-  ./node_modules/.bin/expo start --port 8081 --clear > "$1" 2>&1 &
+start_metro() { # <log file> [NAME=value ...]: the extra environment decides the bundle's root component (index.ts)
+  log="$1"; shift
+  env ${1+"$@"} ./node_modules/.bin/expo start --port 8081 --clear > "$log" 2>&1 &
   METRO_PID=$!; PIDS="$PIDS $METRO_PID"
-  wait_for 120 metro_running || { echo "Metro did not start"; tail -30 "$1"; exit 1; }
+  wait_for 120 metro_running || { echo "Metro did not start"; tail -30 "$log"; exit 1; }
 }
 
 xcrun simctl bootstatus "$UDID" -b > /dev/null || { echo "simulator did not boot"; exit 1; }
@@ -37,7 +38,7 @@ DEVICE_TEST_SERVER_URL=http://127.0.0.1:8787 node device-test/host.ts 8787 "$OUT
 HOST_PID=$!; PIDS="$PIDS $HOST_PID"
 
 echo "== device test in $BUNDLE_ID"
-EXPO_PUBLIC_DEVICE_TEST=1 EXPO_PUBLIC_DEVICE_TEST_HOST=http://127.0.0.1:8799 start_metro "$OUT/metro-device-test.log"
+start_metro "$OUT/metro-device-test.log" EXPO_PUBLIC_DEVICE_TEST=1 EXPO_PUBLIC_DEVICE_TEST_HOST=http://127.0.0.1:8799
 xcrun simctl install "$UDID" "$APP" || exit 1
 xcrun simctl launch "$UDID" "$BUNDLE_ID" || exit 1
 START=$(date +%s)
@@ -64,5 +65,6 @@ xcrun simctl terminate "$UDID" "$BUNDLE_ID" > /dev/null 2>&1
 node device-test/summary.ts "$OUT/device-test.json" ${1+"$@"} > "$OUT/summary.md" 2> /dev/null
 STATUS=$?
 cat "$OUT/summary.md"
+if grep -q "device-test" "$OUT/metro-app.log"; then echo "the normal start ran the device test, not the screens"; STATUS=1; fi
 [ "$APP_ALIVE" = yes ] || { echo "the normal app was not running 20 s after its bundle loaded"; STATUS=1; }
 exit $STATUS
